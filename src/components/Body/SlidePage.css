@@ -1,0 +1,72 @@
+#SlidePage{
+    height: 100%;
+}
+/* html,
+body{
+    position: relative;
+    height: 100%;
+} */
+
+
+
+.swiper-slide{
+    background-color: #fff;
+    display: flex;
+    overflow: hidden;
+    position: relative;
+} 
+
+ .swiper-slide img{
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.concept {
+    
+      letter-spacing: 5px;
+      position: relative;
+      &:before {
+        content: "Let's wear the best";
+        position: absolute;
+        margin: auto;
+        left: 0px;
+        right: 0px;
+        max-width: 400px;
+        color: transparent;
+        letter-spacing: 5px;
+        text-shadow: brown;
+      }
+    }
+    &:hover h1:before {
+      transition: 0.6s ease-in-out;
+      color: rgba(255, 255, 255, 0.8);
+      animation: jump-out 0.6s ease-in-out;
+    }
+  
+  
+  @keyframes jump-out {
+    0% {
+      opacity: 0;
+      transform: scale(1);
+    }
+    20% {
+      opacity: 1;
+    }
+    100% {
+      opacity: 0;
+      transform: scale(2);
+    }
+  }
+
+/* .s-container{
+    position: relative;
+}
+
+.s-container .swiper{
+    position: unset;
+    width: 70%;
+    height: 12rem;
+
+} */
