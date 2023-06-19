@@ -1,16 +1,26 @@
-
 import Button from "../../reusable/Button";
 import Modal from "../../reusable/Modal";
 import Panel from "../../reusable/Panel";
 import EachCloth from "./Clothes/EachCloth";
 import { clothes } from "./Clothes/clothData";
-import { useState } from "react";
+import { useState, useMemo } from "react";
+import { useLocation } from "react-router-dom";
 
 function ClothesPage() {
+  //   let query = useQuery();
+
+  const { search } = useLocation();
+
+  const query = new URLSearchParams(search);
   
 
-  const clothData = clothes.map((cloth) => (
-    <div key={cloth.type}>
+  console.log(query.get("category"));
+//   (condition)?(statement):(statement)
+const filteredClothes = clothes.filter((cloth) => cloth.type === query.get("category"));
+const newCloth = (query.get("category")?filteredClothes: clothes);
+console.log(newCloth)
+  const clothData = newCloth.map((cloth, index) => (
+    <div key={index}>
       <h1 className="font-bold">{cloth.type}</h1>
       <div className="grid grid-cols-3 p-8">
         {/* {cloth.data.map((d) => (
@@ -40,7 +50,7 @@ function ClothesPage() {
             )}
           </Panel>
         ))} */}
-        <EachCloth cloth={cloth}/>
+        <EachCloth cloth={cloth} />
       </div>
     </div>
   ));
@@ -53,4 +63,3 @@ function ClothesPage() {
 }
 
 export default ClothesPage;
-

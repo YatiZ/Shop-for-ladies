@@ -32,27 +32,22 @@ function App() {
         <Route path=":evening-wear" element={<ClothesPage/>}></Route>
         <Route path=":cosplay" element={<ClothesPage/>}></Route>
         <Route path=":swimsuit" element={<ClothesPage/>}></Route>
-        <Route path=":sportswear" element={<ClothesPage/>}></Route>
+        <Route path=":pants & skirts" element={<ClothesPage/>}></Route>
       </Route>
 
       <Route path="/bags" element={<BagPage />}>
-        <Route path=":louis-vuittion" element={<BagPage />}></Route>
-        <Route path=":chanel" element={<BagPage />}></Route>
-        <Route path=":gucci" element ={<BagPage />}></Route>
-        <Route path=":prada" element={<BagPage/>}></Route>
-        <Route path=":calvin-klein" element={<BagPage/>}></Route>
+        
       </Route>
       <Route path="/accessories" element={<AccessoriesPage/>}></Route>
       
       <Route path="/sales" element = {<DiscountPage/>}>
-      <Route path="/sales/summer-sales" element = {<SummerSales/>}></Route>
-      <Route path="/sales/winter-sales" element = {<WinterSales/>}></Route>
+
       </Route>
       
       <Route path="/help-center" element ={<HelpCenter />}>
-        <Route path= "/help-center/deliever-issues" element={<DelieverIssues />}></Route>
-        <Route path="/help-center/product-issues" element={<ProductIssues/>}></Route>
-        <Route path="/help-center/contact-admin" element={<ContactAdmin/>}></Route>
+        <Route path= ":deliever-issues" element={<DelieverIssues />}></Route>
+        <Route path=":product-issues" element={<ProductIssues/>}></Route>
+        <Route path=":contact-admin" element={<ContactAdmin/>}></Route>
       </Route>
 
       <Route path="*" element={<NotFound/>} />

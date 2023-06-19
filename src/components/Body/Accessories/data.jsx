@@ -22,7 +22,7 @@ const data = [
         {name:'',img:img3, price:'2000',description:'This model is among the most precious of the Borsalino hats. The perfect combination, the very accurate workmanship and the high quality of the materials used, makes this hat a real jewel.'},
         {name:'',img:img4, price:'2000',description:'This model is among the most precious of the Borsalino hats. The perfect combination, the very accurate workmanship and the high quality of the materials used, makes this hat a real jewel.'}
     ]},
-    {id:4, type:'Necklaces & Bracelets', things:[
+    {id:4, type:'Necklaces-Bracelets', things:[
         {name:'',img:img1, price:'2000',description:'This model is among the most precious of the Borsalino hats. The perfect combination, the very accurate workmanship and the high quality of the materials used, makes this hat a real jewel.'},
         {name:'',img:img2, price:'2000',description:'This model is among the most precious of the Borsalino hats. The perfect combination, the very accurate workmanship and the high quality of the materials used, makes this hat a real jewel.'},
         {name:'',img:img3, price:'2000',description:'This model is among the most precious of the Borsalino hats. The perfect combination, the very accurate workmanship and the high quality of the materials used, makes this hat a real jewel.'},

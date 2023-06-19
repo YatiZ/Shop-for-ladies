@@ -68,7 +68,7 @@ const clothes= [
         {id:5,img:img11,clothName:'Graphic Ruched Split Thigh Cami Dress', description:'it is suitable for independent women!!', value:'200',color:'black', size:'S,M,L'},
         {id:6,img:img12,clothName:'Mermaid Hem Cami Dress', description:'it is suitable for independent women!!', value:'300',color:'black,grey,red', size:'S,M,L'},
     ]},
-    {id:4, type:'tops',data:[
+    {id:4, type:'Tops',data:[
         {id:1,img:img13,clothName:'Asymmetrical Graphic Print Mesh Top', description:'Every woman needs a blazer or two in their wardrobe as this versatile piece can instantly elevate any outfit of the day. Contrary to popular belief, blazers are not just reserved for formal occasions or ladies\' office wear.', value:'200',color:'black',size:'S, M, L'},
         {id:2,img:img14,clothName:'Backless Crop Halter Top', description:'While traditional blazers are usually waist-length long, cropped blazers have been gaining popularity over the years and make for a great alternative if you prefer something less stifling-looking. Pair them with high-waisted skirts or pants and you will have an outfit appropriate for both work and play. Many of these cropped blazers also come in a co-ord set so there is no need to worry about having to find matching bottoms of your choice.', value:'300',color:'black,grey,red', size:'Xs,S,M'},
         {id:3,img:img15,clothName:'Bow Front Ruffle Trim Bandana Hem Top', description:'Next, try leaving your blazer unbuttoned to nail the smart casual look. Buttoning up the blazer is usually more fit for formal occasions where one needs to look professional and put together. ', value:'200',color:'black', size:'S,M,L'},
@@ -76,7 +76,7 @@ const clothes= [
         {id:5,img:img17,clothName:'Ruffle Trim Ruched Crop Top', description:'it is suitable for independent women!!', value:'200',color:'black', size:'S,M,L'},
         {id:6,img:img18,clothName:'Shoulder Ruched Peplum Blouse', description:'it is suitable for independent women!!', value:'300',color:'black,grey,red', size:'S,M,L'},
     ]},
-    {id:5, type:'pants & skirts',data:[
+    {id:5, type:'Bottom',data:[
         {id:1,img:img25,clothName:'Allover Print Ruffle Trim Flare Leg Pants', description:'Every woman needs a blazer or two in their wardrobe as this versatile piece can instantly elevate any outfit of the day. Contrary to popular belief, blazers are not just reserved for formal occasions or ladies\' office wear.', value:'200',color:'black',size:'S, M, L'},
         {id:2,img:img26,clothName:'Flap Pocket Buckle Cargo Pants', description:'While traditional blazers are usually waist-length long, cropped blazers have been gaining popularity over the years and make for a great alternative if you prefer something less stifling-looking. Pair them with high-waisted skirts or pants and you will have an outfit appropriate for both work and play. Many of these cropped blazers also come in a co-ord set so there is no need to worry about having to find matching bottoms of your choice.', value:'300',color:'black,grey,red', size:'Xs,S,M'},
         {id:3,img:img27,clothName:'High Low Ruffle Trim Skirt', description:'Next, try leaving your blazer unbuttoned to nail the smart casual look. Buttoning up the blazer is usually more fit for formal occasions where one needs to look professional and put together. ', value:'200',color:'black', size:'S,M,L'},

@@ -1,16 +1,11 @@
 import { Link } from "react-router-dom";
-import { useState } from "react";
+
 
 function NavDrops({data,navigateData}){
-    const [products, setProducts] = useState(navigateData);
-
-    const filterDrops = (label)=>{
-        setProducts(navigateData.filter((drop)=>drop.label === label))
-        
-        
-    }
+    
+    
     const dropData = data.drops.map((drop)=>(
-        <Link to={`${data.path}${drop.path}`} onClick={()=>filterDrops(data.id)}>
+        <Link to={`${data.path}${drop.path}`}>
             <p className="py-1 px-3 hover:bg-yellow-300 hover:rounded-md m-0">{drop.label}</p>
         </Link>
         
