@@ -15,7 +15,7 @@ function AccessoriesPage(){
             {d.things.map((thing)=>(
                 <div key={thing.id}>
                     <p className="text-center">{thing.name}</p>
-                    <img src={thing.img} alt="thing" className="w-56 h-56"/>
+                    <img src={thing.img} alt="thing" className="w-56 h-full"/>
                 </div>
             ))}
         </div>

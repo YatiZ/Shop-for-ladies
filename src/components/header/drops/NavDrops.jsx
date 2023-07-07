@@ -5,12 +5,12 @@ function NavDrops({data,navigateData}){
     
     
     const dropData = data.drops.map((drop)=>(
-        <Link to={`${data.path}${drop.path}`}>
-            <p className="py-1 px-3 hover:bg-yellow-300 hover:rounded-md m-0">{drop.label}</p>
+        <Link to={`${data.path}${drop.path}`} key={data.id}>
+            <p className="py-1 px-3 hover:bg-yellow-300 hover:rounded-md m-0 hover:text-pink-600">{drop.label}</p>
         </Link>
         
     ))
-    return  <div className="fixed mt-1 bg-pink-300 rounded-md">
+    return  <div className="fixed mt-1 bg-pink-300 rounded-md md:pb-0 pb-3">
         {dropData}
     </div>
 }

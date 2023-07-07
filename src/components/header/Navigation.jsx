@@ -65,12 +65,14 @@ function Navigation() {
         { label: "Deliever Issues", path: "?issues=Deliever Issues" },
         { label: "Product Issues", path: "?issues=Product Issues" },
         { label: "Contact Admin", path: "?issues=Contact Admin" },
+        {label:"Reviews", path:"?issues=Reviews"}
       ],
     },
   ];
   return (
     <nav>
       <NavigateDrops navigateData={navigateDrops} />
+      
     </nav>
   );
 }

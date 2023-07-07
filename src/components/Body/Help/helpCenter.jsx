@@ -1,35 +1,31 @@
 import { useLocation } from "react-router";
-
+import { issues } from "./EachIssues";
+import {Routes, Route, Link} from "react-router-dom";
+import Button from "../../../reusable/Button";
+import { useState } from "react";
+import DetailReview from "../Review/DetailReview";
+import DetailPage from "./DetailPage";
 
 function HelpCenter(){
-    const issues = [
-        {id:1, name:'Deliever Issues'},
-        {id:2, name:'Product Issues'},
-        {id:3, name:'Contact Admin'},
-    ]
+    
     const {search} = useLocation();
     const query = new URLSearchParams(search);
-
+    
+   
     const filteredIssues = issues.filter((issue)=>
         issue.name === query.get("issues"));
 
     const finalIssues = (query.get("issues")? filteredIssues: issues)
     
     const renderedIssues = finalIssues.map((issue)=>(
-       
-            <div>
-                <h1>{issue.name}</h1>
-            </div>
-        
+            <DetailPage issue={issue} key={issue.id}/>
     ));
     return (
         <div>
             <h1>Helo</h1>
             
-            {/* <Link to="/help-center/deliever-issues">DelieverIssues </Link>
-            <Link to="/help-center/product-issues">ProductIssues</Link> */}
-        
           {renderedIssues}
+          
         </div>
     )
 }

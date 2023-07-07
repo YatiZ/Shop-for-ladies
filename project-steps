@@ -1,0 +1,10 @@
+For rating process
+
+-create rating models in django
+-install rest-framework and setup 
+
+To connect with frontend
+-some install and change settings in backend
+-make a rating and review form in frontend
+-use axios or fetch to connect backend and frontend
+

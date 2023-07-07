@@ -17,7 +17,7 @@ function BagPage(){
     const bagData = bags.map((data)=>(
        <div key={data.id}>
          <p>{data.brandName}</p>
-         <div className="grid grid-cols-2 p-10">
+         <div className="grid md:grid-cols-2 grid-cols-1 place-items-center m-14">
             <EachBag data={data}/>
          </div>
        </div>

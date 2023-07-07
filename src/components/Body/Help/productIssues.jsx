@@ -1,6 +1,10 @@
+import { Link, Route, Routes } from "react-router-dom";
+
 function ProductIssues(){
     return (
-        <div>Product Problems</div>
+        <Routes>
+            <Route path="product-issues" element={<div>Hello</div>}></Route>
+        </Routes>
     )
 }
 export default ProductIssues;

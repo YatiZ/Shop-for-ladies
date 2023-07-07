@@ -8,8 +8,8 @@ function BagSwip({bag}){
     }
     return (
         <div className="flex justify-center pr-16">
-        {!swipPhoto && <img src={bag.img} alt="bag" className="w-62 ml-16 h-72" onClick={handleSwipPhoto}/>}
-        {swipPhoto && <img src={bag.sideImg} alt="bag" className="w-80 ml-16 h-72" onClick={handleSwipPhoto}/>}
+        {!swipPhoto && <img src={bag.img} alt="bag" className="md:w-62 w-fit ml-16 md:h-72 h-full" onClick={handleSwipPhoto}/>}
+        {swipPhoto && <img src={bag.sideImg} alt="bag" className="md:w-62 w-fit ml-16 md:h-72 h-full" onClick={handleSwipPhoto}/>}
         </div>
         
     )

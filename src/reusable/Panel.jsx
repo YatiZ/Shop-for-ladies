@@ -2,7 +2,7 @@ import classNames from "classnames";
 
 function Panel({children, className, ...rest}){
     const classes = classNames(
-       'border rounded p-3 shadow w-full',
+       'relative rounded-md backdrop-opacity-10 bg-white/30 backdrop-blur shadow-xl',
        className
     )
     return (

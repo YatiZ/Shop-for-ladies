@@ -1,0 +1,7 @@
+{% block content %} 
+<h1>Hello Users</h1>
+{% for user in users %}
+{{user.username}}
+{{user.gender}}
+{% endfor %}
+{% endblock %}
