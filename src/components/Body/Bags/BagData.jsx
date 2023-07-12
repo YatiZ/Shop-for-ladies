@@ -31,37 +31,37 @@ const BagData = [
         {id:11,name:'onthego-handbags',img:img1,price:'3000',sideImg:sideImg1},
         {id:12,name:'pochette-métis-handbags',img:img2,price:'3000',sideImg:sideImg2},
         {id:13,name:'side-trunk-handbags',img:img3,price:'3000', sideImg:sideImg3},
-        {id:14,name:'speedy-bandoulière-empreinte-leather-handbags',img:img4,price:'3000',sideImg:sideImg4}
+        {id:14,name:'empreinte-leather-handbags',img:img4,price:'3000',sideImg:sideImg4}
     ]},
     {id:2, brandName:'Chanel', data:[
         {id:15,name:'onthego-handbags',img:img5,price:'3000',sideImg:img6},
         {id:16,name:'pochette-métis-handbags',img:img6,price:'3000', sideImg:sideImg6},
         {id:17,name:'side-trunk-handbags',img:img7,price:'3000',sideImg:img8},
-        {id:18,name:'speedy-bandoulière-empreinte-leather-handbags',img:img8,price:'3000',sideImg:img6}
+        {id:18,name:'empreinte-leather-handbags',img:img8,price:'3000',sideImg:img6}
     ]},
     {id:3, brandName:'Gucci', data:[
         {id:19,name:'onthego-handbags',img:img9,price:'3000',sideImg:sideImg9},
         {id:20,name:'pochette-métis-handbags',img:img6,price:'3000', sideImg:img5},
         {id:21,name:'side-trunk-handbags',img:img7,price:'3000',sideImg:img8},
-        {id:22,name:'speedy-bandoulière-empreinte-leather-handbags',img:img8,price:'3000',sideImg:img6}
+        {id:22,name:'empreinte-leather-handbags',img:img8,price:'3000',sideImg:img6}
     ]},
     {id:4, brandName:'Dior', data:[
         {id:23,name:'onthego-handbags',img:img13,price:'3000',sideImg:sideImg13},
         {id:24,name:'pochette-métis-handbags',img:img14,price:'3000', sideImg:sideImg14},
         {id:25,name:'side-trunk-handbags',img:img15,price:'3000',sideImg:sideImg15},
-        {id:26,name:'speedy-bandoulière-empreinte-leather-handbags',img:img16,price:'3000',sideImg:sideImg16}
+        {id:26,name:'empreinte-leather-handbags',img:img16,price:'3000',sideImg:sideImg16}
     ]},
     {id:5, brandName:'Calvin Klein', data:[
         {id:27,name:'onthego-handbags',img:img9,price:'3000',sideImg:sideImg9},
         {id:28,name:'pochette-métis-handbags',img:img6,price:'3000', sideImg:img5},
         {id:29,name:'side-trunk-handbags',img:img7,price:'3000',sideImg:img8},
-        {id:30,name:'speedy-bandoulière-empreinte-leather-handbags',img:img8,price:'3000',sideImg:img6}
+        {id:30,name:'empreinte-leather-handbags',img:img8,price:'3000',sideImg:img6}
     ]},
     {id:6, brandName:'Zara', data:[
         {id:31,name:'onthego-handbags',img:img9,price:'3000',sideImg:sideImg9},
         {id:32,name:'pochette-métis-handbags',img:img6,price:'3000', sideImg:img5},
         {id:33,name:'side-trunk-handbags',img:img7,price:'3000',sideImg:img8},
-        {id:34,name:'speedy-bandoulière-empreinte-leather-handbags',img:img8,price:'3000',sideImg:img6}
+        {id:34,name:'empreinte-leather-handbags',img:img8,price:'3000',sideImg:img6}
     ]},
 ]
 

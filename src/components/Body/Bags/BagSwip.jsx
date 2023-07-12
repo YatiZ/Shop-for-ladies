@@ -7,9 +7,9 @@ function BagSwip({bag}){
         setSwipPhoto(!swipPhoto)
     }
     return (
-        <div className="flex justify-center pr-16">
-        {!swipPhoto && <img src={bag.img} alt="bag" className="md:w-62 w-fit ml-16 md:h-72 h-full" onClick={handleSwipPhoto}/>}
-        {swipPhoto && <img src={bag.sideImg} alt="bag" className="md:w-62 w-fit ml-16 md:h-72 h-full" onClick={handleSwipPhoto}/>}
+        <div className="flex justify-center">
+        {!swipPhoto && <img src={bag.img} alt="bag" className="w-72 h-60" onClick={handleSwipPhoto}/>}
+        {swipPhoto && <img src={bag.sideImg} alt="bag" className="w-72 h-60" onClick={handleSwipPhoto}/>}
         </div>
         
     )
