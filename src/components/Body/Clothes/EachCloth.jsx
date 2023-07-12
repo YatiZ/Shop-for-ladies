@@ -10,7 +10,7 @@ import { useState } from "react";
 function EachCloth({ cloth }) {
   
   const renderedOpenModal = cloth.data.map((d) => (
-    <Panel className="text-center w-fit h-full p-5 mx-3">
+    <Panel key={d.id} className="text-center w-fit h-full p-5 mx-3">
       <div className="overflow-hidden relative">
         <div>
         <img
@@ -19,7 +19,7 @@ function EachCloth({ cloth }) {
           
         />
         </div>
-        <div className="absolute inset-0 translate-y-[85%] hover:bg-pink-400 hover:rounded-full py-3 text-white"><Cart/></div>
+        <div className="absolute inset-0 translate-y-[85%] hover:bg-pink-400 hover:rounded-full py-3 text-white"><Cart products={d}/></div>
         
       </div>
       <div className="py-3">

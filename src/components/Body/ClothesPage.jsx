@@ -11,11 +11,10 @@ function ClothesPage() {
   const query = new URLSearchParams(search);
   
 
-  console.log(query.get("category"));
+  // console.log(query.get("category"));
 //   (condition)?(statement):(statement)
 const filteredClothes = clothes.filter((cloth) => cloth.type === query.get("category"));
 const newCloth = (query.get("category")?filteredClothes: clothes);
-console.log(newCloth)
   const clothData = newCloth.map((cloth, index) => (
     <div key={index}>
       <h1 className="font-bold mt-10">{cloth.type}</h1>

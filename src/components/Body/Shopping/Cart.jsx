@@ -1,16 +1,18 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { AddShoppingCart } from '@mui/icons-material';
-import { useState } from 'react';
+import { ShopContext } from '../../../context/useShopContext';
 
-const Cart = () => {
-  const [addItem, setAddItem] = useState(0)
+const Cart = ({products}) => {
+  console.log(products)
+  const { cart,addToCart} = useContext(ShopContext)
   const handleClick = ()=>{
-     setAddItem(addItem+1)
+    addToCart(products)
+    console.log(cart)
   }
-  console.log(addItem)
+  
   return (
     <><AddShoppingCart onClick={handleClick}/>
-     {addItem}
+     
     </>
   )
 }

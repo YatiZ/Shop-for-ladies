@@ -1,16 +1,19 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { Routes,Route } from 'react-router';
 import BagData from './BagData';
 import Cart from './Cart';
+import { ShopContext } from '../../../context/useShopContext';
 
-const ShoppingBagPage = ({addItem}) => {
-    console.log('Items are:',addItem)
+const ShoppingBagPage = () => {
+   const {cart} = useContext(ShopContext)
   return (
    <div>
      <h1>The things you buy-</h1>
-     {addItem === 0? (<p>cart is empty</p>):
-     (<div>
-        {addItem}</div>)}
+     {JSON.stringify(cart)}
+     {cart.map((item)=>(
+       <div>{item.name} - {item.qty}</div>
+       
+     ))}
    </div>
   )
 }
