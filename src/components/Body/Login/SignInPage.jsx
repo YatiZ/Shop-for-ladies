@@ -11,8 +11,7 @@ const SignInPage = () => {
   const initialValue = {};
   const [values, handleChange] = useForm(initialValue);
   const handleSubmit = async (event) => {
-    console.log(values.password);
-    console.log(values.email);
+    
     event.preventDefault();
     try {
       const response = await axios.get(

@@ -1,30 +1,62 @@
-import React, { createContext, useState } from "react";
+import React, { createContext, useReducer, useState } from "react";
 
 const ShopContext = createContext();
 
 const ShopProvider = ({ children }) => {
   const [cart, setCart] = useState([]);
-  const addToCart = (products) => {
-    const cartItem = {
-      id: products.id,
-      img: products.img,
-      name: products.clothName,
-      price: products.value,
-      qty: 1,
-    };
-    let existingItem = cart.findIndex((item) => item.id === cartItem.id);
+  
+  
+  const handleDecrement=(item)=>{
+   
 
-    if (existingItem !== -1) {
-      const newCart = cart;
-      newCart[existingItem].qty++;
-      setCart(() => newCart);
+    const newCart = cart.map((cartItem) => {
+      if (item.id === cartItem.id) {
+        cartItem.qty--;
+      }
+      if(cartItem.qty === 0){
+        return null;
+      }
+      
+      return cartItem;
+
+    })
+
+    const updatedCart = newCart.filter(i=>i);
+  
+    setCart(() => updatedCart);
+    console.log(newCart)
+  }
+
+  const handleRemove=(item)=>{
+    const updatedCart=cart.filter((i)=>i.id !== item.id);
+    setCart(()=>updatedCart)
+    
+  }
+
+
+  const handleClick = (item) => {
+    const itemExists = cart.findIndex((c) => c.id == item.id);
+
+    if (itemExists == -1) {
+      setCart(() => [...cart, item]);
       return;
     }
-    setCart(() => [...cart, cartItem]);
+
+    const newCart = cart.map((cartItem) => {
+      if (item.id === cartItem.id) {
+        cartItem.qty++;
+      }
+
+      return cartItem;
+    });
+
+    setCart(() => newCart);
   };
 
+
+
   return (
-    <ShopContext.Provider value={{ cart, addToCart }}>
+    <ShopContext.Provider value={{ cart, handleClick,handleDecrement,handleRemove }}>
       {children}
     </ShopContext.Provider>
   );

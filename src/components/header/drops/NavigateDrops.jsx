@@ -9,6 +9,7 @@ import { ShopContext } from "../../../context/useShopContext";
 function NavigateDrops({ navigateData }) {
   const [openDrops, setOpenDrops] = useState(false);
   const { cart } = useContext(ShopContext);
+
   const handleOpenDrops = (id) => {
     setOpenDrops(id);
   };
@@ -33,6 +34,11 @@ function NavigateDrops({ navigateData }) {
       )}
     </div>
   ));
+
+  const totalQty = cart.reduce((prev, c) => {
+    return prev + c.qty;
+  }, 0);
+  
   return (
     <div className={`md:flex gap-8`}>
       {/* <div className="absolute right-8 top-5 text-xl cursor-pointer md:hidden" onClick={handleOpenMenu}>
@@ -52,12 +58,12 @@ function NavigateDrops({ navigateData }) {
           <BiLogInCircle className="text-2xl " />
         </Link>
       </div>
-      <div className="mt-2">
+      <div className="mt-2 mr-10">
         <Link to="/shopping-bag">
           <div className="outline-pink-500 outline rounded-full px-2 py-2">
             <ShoppingBag className="text-2xl" />
-            <div className="bg-red-500 px-2 py-2 rounded-full absolute top-3 right-11">
-              {cart.qty}
+            <div className="bg-red-500 px-2 py-1 mr-6 rounded-full absolute top-1 right-10">
+              <p className="text-xs">{totalQty}</p>
             </div>
           </div>
         </Link>

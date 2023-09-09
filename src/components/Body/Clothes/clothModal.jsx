@@ -18,7 +18,7 @@ function ClothModal({ d }) {
   );
   return (
     <div className="cursor-pointer hover:font-bold">
-      <p onClick={OpenMoreInfo}>{d.clothName}</p>
+      <p onClick={OpenMoreInfo}>{d.name}</p>
       {openInfo && (
         <Modal openInfo={openInfo} actionBar={actionBar} onClose={handleClose}>
           <div className="flex">

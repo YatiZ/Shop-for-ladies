@@ -12,10 +12,12 @@ import HelpCenter from "./components/Body/Help/helpCenter";
 import SignInPage from "./components/Body/Login/SignInPage";
 import ShoppingBagPage from "./components/Body/Shopping/BagPage";
 import UserRegister from "./components/Body/Login/UserRegister";
+import ShoePage from "./components/Body/Shoes/ShoePage";
+import ShopPage from "./components/Body/Shopping/ShopPage";
 
 function App() {
   return (
-    <div>
+    <div className="">
       <Header />
       <Routes>
         <Route path="/" element={<BodyPage />}></Route>
@@ -24,7 +26,7 @@ function App() {
 
         <Route path="/bags" element={<BagPage />}></Route>
         <Route path="/accessories" element={<AccessoriesPage />}></Route>
-
+        <Route path="/shoes" element={<ShoePage/>}/>
         <Route path="/sales" element={<DiscountPage />}></Route>
 
         <Route path="/help-center" element={<HelpCenter />}>
@@ -34,6 +36,7 @@ function App() {
         </Route>
         <Route path="/login" element={<SignInPage />} />
         <Route path="/shopping-bag" element={<ShoppingBagPage />} />
+        <Route path="/shop-page" element={<ShopPage/>} />
         <Route path="/sign-up" element={<UserRegister />} />
         <Route path="*" element={<NotFound />} />
       </Routes>

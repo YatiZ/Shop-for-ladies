@@ -28,40 +28,40 @@ import sideImg16 from '../Bags/images/Dior/Yellow_Patent_Cannage_Calfskin__1_-re
 
 const BagData = [
     {id:1, brandName:'Louis Vuitton', data:[
-        {id:11,name:'onthego-handbags',img:img1,price:'3000',sideImg:sideImg1},
-        {id:12,name:'pochette-métis-handbags',img:img2,price:'3000',sideImg:sideImg2},
-        {id:13,name:'side-trunk-handbags',img:img3,price:'3000', sideImg:sideImg3},
-        {id:14,name:'empreinte-leather-handbags',img:img4,price:'3000',sideImg:sideImg4}
+        {id:11,name:'onthego-handbags',img:img1,price:3000,sideImg:sideImg1,qty:0},
+        {id:12,name:'pochette-métis-handbags',img:img2,price:5000,sideImg:sideImg2,qty:0},
+        {id:13,name:'side-trunk-handbags',img:img3,price:4000, sideImg:sideImg3,qty:0},
+        {id:14,name:'empreinte-leather-handbags',img:img4,price:6000,sideImg:sideImg4,qty:0}
     ]},
     {id:2, brandName:'Chanel', data:[
-        {id:15,name:'onthego-handbags',img:img5,price:'3000',sideImg:img6},
-        {id:16,name:'pochette-métis-handbags',img:img6,price:'3000', sideImg:sideImg6},
-        {id:17,name:'side-trunk-handbags',img:img7,price:'3000',sideImg:img8},
-        {id:18,name:'empreinte-leather-handbags',img:img8,price:'3000',sideImg:img6}
+        {id:15,name:'onthego-handbags',img:img5,price:2000,sideImg:img6,qty:0},
+        {id:16,name:'pochette-métis-handbags',img:img6,price:5000, sideImg:sideImg6,qty:0},
+        {id:17,name:'side-trunk-handbags',img:img7,price:3000,sideImg:img8,qty:0},
+        {id:18,name:'empreinte-leather-handbags',img:img8,price:1000,sideImg:img6,qty:0}
     ]},
     {id:3, brandName:'Gucci', data:[
-        {id:19,name:'onthego-handbags',img:img9,price:'3000',sideImg:sideImg9},
-        {id:20,name:'pochette-métis-handbags',img:img6,price:'3000', sideImg:img5},
-        {id:21,name:'side-trunk-handbags',img:img7,price:'3000',sideImg:img8},
-        {id:22,name:'empreinte-leather-handbags',img:img8,price:'3000',sideImg:img6}
+        {id:19,name:'onthego-handbags',img:img9,price:3000,sideImg:sideImg9,qty:0},
+        {id:20,name:'pochette-métis-handbags',img:img6,price:2000, sideImg:img5,qty:0},
+        {id:21,name:'side-trunk-handbags',img:img7,price:4000,sideImg:img8,qty:0},
+        {id:22,name:'empreinte-leather-handbags',img:img8,price:5000,sideImg:img6,qty:0}
     ]},
     {id:4, brandName:'Dior', data:[
-        {id:23,name:'onthego-handbags',img:img13,price:'3000',sideImg:sideImg13},
-        {id:24,name:'pochette-métis-handbags',img:img14,price:'3000', sideImg:sideImg14},
-        {id:25,name:'side-trunk-handbags',img:img15,price:'3000',sideImg:sideImg15},
-        {id:26,name:'empreinte-leather-handbags',img:img16,price:'3000',sideImg:sideImg16}
+        {id:23,name:'onthego-handbags',img:img13,price:3000,sideImg:sideImg13,qty:0},
+        {id:24,name:'pochette-métis-handbags',img:img14,price:2000, sideImg:sideImg14,qty:0},
+        {id:25,name:'side-trunk-handbags',img:img15,price:3000,sideImg:sideImg15,qty:0},
+        {id:26,name:'empreinte-leather-handbags',img:img16,price:3000,sideImg:sideImg16,qty:0}
     ]},
     {id:5, brandName:'Calvin Klein', data:[
-        {id:27,name:'onthego-handbags',img:img9,price:'3000',sideImg:sideImg9},
-        {id:28,name:'pochette-métis-handbags',img:img6,price:'3000', sideImg:img5},
-        {id:29,name:'side-trunk-handbags',img:img7,price:'3000',sideImg:img8},
-        {id:30,name:'empreinte-leather-handbags',img:img8,price:'3000',sideImg:img6}
+        {id:27,name:'onthego-handbags',img:img9,price:3000,sideImg:sideImg9,qty:0},
+        {id:28,name:'pochette-métis-handbags',img:img6,price:4000, sideImg:img5,qty:0},
+        {id:29,name:'side-trunk-handbags',img:img7,price:3000,sideImg:img8,qty:0},
+        {id:30,name:'empreinte-leather-handbags',img:img8,price:3000,sideImg:img6,qty:0}
     ]},
     {id:6, brandName:'Zara', data:[
-        {id:31,name:'onthego-handbags',img:img9,price:'3000',sideImg:sideImg9},
-        {id:32,name:'pochette-métis-handbags',img:img6,price:'3000', sideImg:img5},
-        {id:33,name:'side-trunk-handbags',img:img7,price:'3000',sideImg:img8},
-        {id:34,name:'empreinte-leather-handbags',img:img8,price:'3000',sideImg:img6}
+        {id:31,name:'onthego-handbags',img:img9,price:3000,sideImg:sideImg9,qty:0},
+        {id:32,name:'pochette-métis-handbags',img:img6,price:5000, sideImg:img5,qty:0},
+        {id:33,name:'side-trunk-handbags',img:img7,price:5000,sideImg:img8,qty:0},
+        {id:34,name:'empreinte-leather-handbags',img:img8,price:3000,sideImg:img6,qty:0}
     ]},
 ]
 

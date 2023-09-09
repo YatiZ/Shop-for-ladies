@@ -17,28 +17,28 @@ import img16 from '../Accessories/images/Rhinestone Butterfly Charm Necklace.jpg
 
 const data = [
     {id:1, type:'Hats', things:[
-        {name:'Classic-Borsalino',img:img1, price:'2000',description:'This model is among the most precious of the Borsalino hats. The perfect combination, the very accurate workmanship and the high quality of the materials used, makes this hat a real jewel.'},
-        {name:'Elegant-hat',img:img2, price:'2000',description:'This model is among the most precious of the Borsalino hats. The perfect combination, the very accurate workmanship and the high quality of the materials used, makes this hat a real jewel.'},
-        {name:'FASHION-Hat',img:img3, price:'2000',description:'This model is among the most precious of the Borsalino hats. The perfect combination, the very accurate workmanship and the high quality of the materials used, makes this hat a real jewel.'},
-        {name:'summer-trilby-hat-Ivonn',img:img4, price:'2000',description:'This model is among the most precious of the Borsalino hats. The perfect combination, the very accurate workmanship and the high quality of the materials used, makes this hat a real jewel.'}
+        {id:1,name:'Classic-Borsalino',img:img1, price:3000,description:'This model is among the most precious of the Borsalino hats. The perfect combination, the very accurate workmanship and the high quality of the materials used, makes this hat a real jewel.',qty:0},
+        {id:2,name:'Elegant-hat',img:img2, price:3000,description:'This model is among the most precious of the Borsalino hats. The perfect combination, the very accurate workmanship and the high quality of the materials used, makes this hat a real jewel.',qty:0},
+        {id:3,name:'FASHION-Hat',img:img3, price:3000,description:'This model is among the most precious of the Borsalino hats. The perfect combination, the very accurate workmanship and the high quality of the materials used, makes this hat a real jewel.',qty:0},
+        {id:4,name:'summer-trilby-hat-Ivonn',img:img4, price:3000,description:'This model is among the most precious of the Borsalino hats. The perfect combination, the very accurate workmanship and the high quality of the materials used, makes this hat a real jewel.',qty:0}
     ]},
     {id:2, type:'Hair Accessories', things:[
-        {name:'',img:img5, price:'2000',description:'This model is among the most precious of the Borsalino hats. The perfect combination, the very accurate workmanship and the high quality of the materials used, makes this hat a real jewel.'},
-        {name:'',img:img6, price:'2000',description:'This model is among the most precious of the Borsalino hats. The perfect combination, the very accurate workmanship and the high quality of the materials used, makes this hat a real jewel.'},
-        {name:'',img:img7, price:'2000',description:'This model is among the most precious of the Borsalino hats. The perfect combination, the very accurate workmanship and the high quality of the materials used, makes this hat a real jewel.'},
-        {name:'',img:img8, price:'2000',description:'This model is among the most precious of the Borsalino hats. The perfect combination, the very accurate workmanship and the high quality of the materials used, makes this hat a real jewel.'}
+        {id:1,name:'',img:img5, price:3000,description:'This model is among the most precious of the Borsalino hats. The perfect combination, the very accurate workmanship and the high quality of the materials used, makes this hat a real jewel.',qty:0},
+        {id:2,name:'',img:img6, price:3000,description:'This model is among the most precious of the Borsalino hats. The perfect combination, the very accurate workmanship and the high quality of the materials used, makes this hat a real jewel.',qty:0},
+        {id:3,name:'',img:img7, price:3000,description:'This model is among the most precious of the Borsalino hats. The perfect combination, the very accurate workmanship and the high quality of the materials used, makes this hat a real jewel.',qty:0},
+        {id:4,name:'',img:img8, price:3000,description:'This model is among the most precious of the Borsalino hats. The perfect combination, the very accurate workmanship and the high quality of the materials used, makes this hat a real jewel.',qty:0}
     ]},
     {id:3, type:'Belt', things:[
-        {name:'',img:img9, price:'2000',description:'This model is among the most precious of the Borsalino hats. The perfect combination, the very accurate workmanship and the high quality of the materials used, makes this hat a real jewel.'},
-        {name:'',img:img10, price:'2000',description:'This model is among the most precious of the Borsalino hats. The perfect combination, the very accurate workmanship and the high quality of the materials used, makes this hat a real jewel.'},
-        {name:'',img:img11, price:'2000',description:'This model is among the most precious of the Borsalino hats. The perfect combination, the very accurate workmanship and the high quality of the materials used, makes this hat a real jewel.'},
-        {name:'',img:img12, price:'2000',description:'This model is among the most precious of the Borsalino hats. The perfect combination, the very accurate workmanship and the high quality of the materials used, makes this hat a real jewel.'}
+        {id:1,name:'',img:img9, price:3000,description:'This model is among the most precious of the Borsalino hats. The perfect combination, the very accurate workmanship and the high quality of the materials used, makes this hat a real jewel.',qty:0},
+        {id:2,name:'',img:img10, price:3000,description:'This model is among the most precious of the Borsalino hats. The perfect combination, the very accurate workmanship and the high quality of the materials used, makes this hat a real jewel.',qty:0},
+        {id:3,name:'',img:img11, price:3000,description:'This model is among the most precious of the Borsalino hats. The perfect combination, the very accurate workmanship and the high quality of the materials used, makes this hat a real jewel.',qty:0},
+        {id:4,name:'',img:img12, price:3000,description:'This model is among the most precious of the Borsalino hats. The perfect combination, the very accurate workmanship and the high quality of the materials used, makes this hat a real jewel.',qty:0}
     ]},
     {id:4, type:'Necklaces-Bracelets', things:[
-        {name:'',img:img13, price:'2000',description:'This model is among the most precious of the Borsalino hats. The perfect combination, the very accurate workmanship and the high quality of the materials used, makes this hat a real jewel.'},
-        {name:'',img:img14, price:'2000',description:'This model is among the most precious of the Borsalino hats. The perfect combination, the very accurate workmanship and the high quality of the materials used, makes this hat a real jewel.'},
-        {name:'',img:img15, price:'2000',description:'This model is among the most precious of the Borsalino hats. The perfect combination, the very accurate workmanship and the high quality of the materials used, makes this hat a real jewel.'},
-        {name:'',img:img16, price:'2000',description:'This model is among the most precious of the Borsalino hats. The perfect combination, the very accurate workmanship and the high quality of the materials used, makes this hat a real jewel.'}
+        {id:1,name:'',img:img13, price:3000,description:'This model is among the most precious of the Borsalino hats. The perfect combination, the very accurate workmanship and the high quality of the materials used, makes this hat a real jewel.',qty:0},
+        {id:2,name:'',img:img14, price:3000,description:'This model is among the most precious of the Borsalino hats. The perfect combination, the very accurate workmanship and the high quality of the materials used, makes this hat a real jewel.',qty:0},
+        {id:3,name:'',img:img15, price:3000,description:'This model is among the most precious of the Borsalino hats. The perfect combination, the very accurate workmanship and the high quality of the materials used, makes this hat a real jewel.',qty:0},
+        {id:4,name:'',img:img16, price:3000,description:'This model is among the most precious of the Borsalino hats. The perfect combination, the very accurate workmanship and the high quality of the materials used, makes this hat a real jewel.',qty:0}
     ]}
 ]
 

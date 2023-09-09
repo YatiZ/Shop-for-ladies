@@ -2,21 +2,26 @@ import React, { useContext, useState } from "react";
 import Panel from "../../../reusable/Panel";
 import { ShopContext } from "../../../context/useShopContext";
 import { IoClose } from "react-icons/io5";
+import OrderSummary from "./OrderSummary";
 
 const ShoppingBagPage = () => {
-  const { cart } = useContext(ShopContext);
-
+  const { cart,handleDecrement,handleClick,handleRemove } = useContext(ShopContext);
+ 
+  
+  
   return (
     <div>
       {cart.length ? (
         <>
           <h1 className="flex justify-center mt-5">Shopping Bag</h1>
 
+          
           {cart.map((item) => (
+           
             <Panel className="mt-5 mx-8" key={item.id}>
               <div className="flex justify-end p-3">
                 <div>
-                  <IoClose />
+                  <IoClose onClick={()=>handleRemove(item)}/>
                 </div>
               </div>
               <hr />
@@ -28,23 +33,23 @@ const ShoppingBagPage = () => {
                   <div className="">
                     <div className="">{item.name}</div>
                     <div className="">${item.price}</div>
-                    <div>{item.qty}</div>
-                    <div>color{item.color} size</div>
+
+                    <div>{item.qty} 
+                    <button onClick={()=>handleClick(item)}>+</button>
+                    <button onClick={()=>handleDecrement(item)}>-</button>
+                    </div>
+                  
+                    <div>size</div>
                   </div>
                 </div>
               </div>
             </Panel>
+  
           ))}
-          <hr />
-          <div>
-            <Panel>
-              <h1>Voucher</h1>
-              {cart.map((item) => (
-                <div>
-                  {item.qty}*{item.price}
-                </div>
-              ))}
-            </Panel>
+         
+         
+          <div className="mt-5">
+            <OrderSummary cart={cart}/>
           </div>
         </>
       ) : (

@@ -44,8 +44,10 @@ function Navigation() {
       title: "Shoes",
       path: "/shoes",
       drops: [
-        { label: "Shoes", path: "/summer-sales" },
-        { label: "Winter Sales", path: "/winter-sales" },
+        { label: "Heels", path: "?shoes=Heels" },
+        { label: "Boots", path: "?shoes=Boots" },
+        { label: "Flats", path: "?shoes=Flats" },
+        { label: "Sandals", path: "?shoes=Sandals"},
       ],
     },
     {

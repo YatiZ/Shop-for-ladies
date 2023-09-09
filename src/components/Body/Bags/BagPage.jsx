@@ -11,7 +11,7 @@ function BagPage() {
   const filteredBag = BagData.filter(
     (bag) => bag.brandName === query.get("bagbrand")
   );
-  console.log(filteredBag);
+  
   const bags = query.get("bagbrand") ? filteredBag : BagData;
 
   const bagData = bags.map((data) => (

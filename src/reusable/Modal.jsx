@@ -12,7 +12,7 @@ function Modal({children, actionBar,onClose}){
    return ReactDOM.createPortal(
     <div>
         <div onClick={onClose} className="fixed inset-0 opacity-80"></div>
-        <div className="fixed inset-40 p-10 bg-yellow-200 border">
+        <div className="fixed md:inset-40 inset-14 mt-24 md:mt-0 md:py-5 h-fit bg-yellow-200 border ">
             {children}
             {actionBar}
         </div>
