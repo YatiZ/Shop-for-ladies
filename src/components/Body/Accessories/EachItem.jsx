@@ -14,6 +14,7 @@ const EachItem = ({thing}) => {
         setOpenImg(!openImg)
        }
     
+    // To show itemQty 
     const productInCart = cart.find((item)=>item.id=== thing.id);
     const quantityInCart = productInCart? productInCart.qty:0;
   return (
@@ -34,11 +35,12 @@ const EachItem = ({thing}) => {
                             <h1 className='flex md:justify-start justify-center'>{thing.name}</h1>
                             <b>${thing.price}</b>
                             <p>{thing.description}</p>
-                            <p>Qty: {thing.qty} </p> 
+                            <p>Qty: {quantityInCart} </p> 
                         </div>
                         </div>
                         <div className='flex justify-center'>
-                            <button className='bg-slate-900 p-1 px-2 text-white w-full ' onClick={()=>handleClick(thing)}>Add To Cart</button>
+                            {/* To add items into cart */}
+                            <button className='bg-slate-900 p-1 px-2 text-white w-full ' onClick={()=>handleClick(thing)}>Add To Cart</button> 
                             </div>
                     </div>
                     </Modal>:<p>
