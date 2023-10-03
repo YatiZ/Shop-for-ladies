@@ -1,0 +1,36 @@
+/* toast-styles.css */
+
+/* Customize the appearance of the toast container */
+#toast-container {
+    position: fixed;
+    top: 1rem;
+    right: 1rem;
+    z-index: 1000;
+    
+  }
+  
+  /* Customize the appearance of individual toasts */
+  .Toastify__toast {
+    border-radius: 4px;
+    padding: 10px;
+    width: 200px;
+    height: 100px;
+  }
+  
+  /* Customize the appearance of success toasts */
+  .Toastify__toast--success {
+    background-color: #bf101e; /* Change the background color for success toasts */
+    color: #fff; /* Change the text color for success toasts */
+  
+  }
+  
+  /* Customize the appearance of error toasts */
+  .Toastify__toast--error {
+    background-color: #f56565; /* Change the background color for error toasts */
+    color: #fff; /* Change the text color for error toasts */
+    width: 20px;
+    height: 10px;
+  }
+  
+  /* Add more custom styles as needed */
+  

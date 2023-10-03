@@ -14,6 +14,8 @@ import ShoppingBagPage from "./components/Body/Shopping/BagPage";
 import UserRegister from "./components/Body/Login/UserRegister";
 import ShoePage from "./components/Body/Shoes/ShoePage";
 import ShopPage from "./components/Body/Shopping/ShopPage";
+import SupportCenter from "./components/Body/Help/SupportCenter";
+
 
 function App() {
   return (
@@ -29,10 +31,8 @@ function App() {
         <Route path="/shoes" element={<ShoePage/>}/>
         <Route path="/sales" element={<DiscountPage />}></Route>
 
-        <Route path="/help-center" element={<HelpCenter />}>
-          {/* <Route path= ":deliever-issues" element={<DelieverIssues />}></Route>
-        <Route path=":product-issues" element={<ProductIssues/>}></Route>
-        <Route path=":contact-admin" element={<ContactAdmin/>}></Route> */}
+        {/* <Route path="/help-center" element={<HelpCenter />}> */}
+        <Route path="/help-center" element={<SupportCenter />}>
         </Route>
         <Route path="/login" element={<SignInPage />} />
         <Route path="/shopping-bag" element={<ShoppingBagPage />} />
@@ -40,6 +40,7 @@ function App() {
         <Route path="/sign-up" element={<UserRegister />} />
         <Route path="*" element={<NotFound />} />
       </Routes>
+      
     </div>
   );
 }

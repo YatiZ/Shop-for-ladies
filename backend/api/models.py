@@ -13,3 +13,7 @@ class UserAccount(AbstractUser):
     birth_date = models.DateField(null=True, blank=True, default=None)
     gender = models.CharField(max_length=10,choices= Gender)
     
+class PromoCode(models.Model):
+    code = models.CharField(max_length=5, unique=True)
+    discount_amount = models.DecimalField(max_digits=10, decimal_places=2)
+    expiration_date = models.DateField()

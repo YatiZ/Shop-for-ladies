@@ -5,6 +5,7 @@ module.exports = {
     extend: {},
     fontFamily:{
       'GreatVibes': 'Great Vibes, cursive',
+      'Serif':'ui-serif, Georgia',
     },
     // animation:{
     //   'animation':'animate 10s linear infinite',
