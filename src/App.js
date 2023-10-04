@@ -19,8 +19,8 @@ import SupportCenter from "./components/Body/Help/SupportCenter";
 
 function App() {
   return (
-    <div className="">
-      <Header />
+    <>
+      <Header/>
       <Routes>
         <Route path="/" element={<BodyPage />}></Route>
 
@@ -41,7 +41,7 @@ function App() {
         <Route path="*" element={<NotFound />} />
       </Routes>
       
-    </div>
+    </>
   );
 }
 
