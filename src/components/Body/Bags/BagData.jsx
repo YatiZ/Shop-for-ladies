@@ -1,29 +1,29 @@
-import img1 from "images/bags/louis-vuitton-lv-x-yk-onthego-handbags.png";
-import sideImg1 from "images/bags/louis/louis-vuitton-lv-x-yk-onthego-mm-monogram-canvas-handbags--M46466_PM1_Side view.png";
-import img2 from "images/bags/louis-vuitton-pochette-métis-handbags.png";
-import sideImg2 from "images/bags/louis/louis-vuitton-pochette-métis-monogram-canvas-handbags--M44875_PM1_Side view.png";
-import img3 from "images/bags/louis-vuitton-side-trunk-handbags.png";
-import sideImg3 from "images/bags/louis/louis-vuitton-side-trunk-other-monogram-canvas-handbags--M22944_PM1_Side view.png";
-import img4 from "images/bags/louis-vuitton-speedy-bandoulière-empreinte-leather-handbags.png";
-import sideImg4 from "images/bags/louis/louis-vuitton-speedy-bandoulière-20-monogram-empreinte-leather-handbags--M46517_PM1_Side view.png";
+import img1 from "/images/bags/louis-vuitton-lv-x-yk-onthego-handbags.png";
+import sideImg1 from "/images/bags/louis/louis-vuitton-lv-x-yk-onthego-mm-monogram-canvas-handbags--M46466_PM1_Side view.png";
+import img2 from "/images/bags/louis-vuitton-pochette-métis-handbags.png";
+import sideImg2 from "/images/bags/louis/louis-vuitton-pochette-métis-monogram-canvas-handbags--M44875_PM1_Side view.png";
+import img3 from "/images/bags/louis-vuitton-side-trunk-handbags.png";
+import sideImg3 from "/images/bags/louis/louis-vuitton-side-trunk-other-monogram-canvas-handbags--M22944_PM1_Side view.png";
+import img4 from "/images/bags/louis-vuitton-speedy-bandoulière-empreinte-leather-handbags.png";
+import sideImg4 from "/images/bags/louis/louis-vuitton-speedy-bandoulière-20-monogram-empreinte-leather-handbags--M46517_PM1_Side view.png";
 
-import img5 from "images/bags/chanel/chanel-22-mini-handbag-light-pink-shiny-removebg-preview.png";
-import img6 from "images/bags/chanel/large-flap-bag-with-top-handle-removebg-preview.png";
-import sideImg6 from "images/bags/chanel/large-flap-bag-with-top-handle-dark-green-sideImg-removebg-preview.png";
-import img7 from "images/bags/chanel/small-backpack-orange-black-white-removebg-preview.png";
-import img8 from "images/bags/chanel/zipped-coin-purse-white-patent-removebg-preview.png";
+import img5 from "/images/bags/chanel/chanel-22-mini-handbag-light-pink-shiny-removebg-preview.png";
+import img6 from "/images/bags/chanel/large-flap-bag-with-top-handle-removebg-preview.png";
+import sideImg6 from "/images/bags/chanel/large-flap-bag-with-top-handle-dark-green-sideImg-removebg-preview.png";
+import img7 from "/images/bags/chanel/small-backpack-orange-black-white-removebg-preview.png";
+import img8 from "/images/bags/chanel/zipped-coin-purse-white-patent-removebg-preview.png";
 
-import img9 from "images/bags/gucci/Light-Gucci-Blondie-small-tote-bag__1_-removebg-preview.png";
-import sideImg9 from "images/bags/gucci/Side-Light-Gucci-Blondie-medium-tote-bag-removebg-preview.png";
+import img9 from "/images/bags/gucci/Light-Gucci-Blondie-small-tote-bag__1_-removebg-preview.png";
+import sideImg9 from "/images/bags/gucci/Side-Light-Gucci-Blondie-medium-tote-bag-removebg-preview.png";
 
-import img13 from "images/bags/Dior/MEDIUM_LADY_DIOR_BAG-removebg-preview.png";
-import sideImg13 from "images/bags/Dior/MEDIUM_LADY_DIOR_BAG-side-removebg-preview.png";
-import img14 from "images/bags/Dior/MINI.png";
-import sideImg14 from "images/bags/Dior/MINI_LADY_DIOR_BAG-side-removebg-preview.png";
-import img15 from "images/bags/Dior/Natural_Wicker_and_Blue_Dior_Oblique_Jacquard-removebg-preview.png";
-import sideImg15 from "images/bags/Dior/Natural_Wicker_and_Blue_Dior_Oblique_Jacquard-side-removebg-preview.png";
-import img16 from "images/bags/Dior/Yellow_Patent_Cannage_Calfskin-removebg-preview.png";
-import sideImg16 from "images/bags/Dior/Yellow_Patent_Cannage_Calfskin__1_-removebg-preview.png";
+import img13 from "/images/bags/Dior/MEDIUM_LADY_DIOR_BAG-removebg-preview.png";
+import sideImg13 from "/images/bags/Dior/MEDIUM_LADY_DIOR_BAG-side-removebg-preview.png";
+import img14 from "/images/bags/Dior/MINI.png";
+import sideImg14 from "/images/bags/Dior/MINI_LADY_DIOR_BAG-side-removebg-preview.png";
+import img15 from "/images/bags/Dior/Natural_Wicker_and_Blue_Dior_Oblique_Jacquard-removebg-preview.png";
+import sideImg15 from "/images/bags/Dior/Natural_Wicker_and_Blue_Dior_Oblique_Jacquard-side-removebg-preview.png";
+import img16 from "/images/bags/Dior/Yellow_Patent_Cannage_Calfskin-removebg-preview.png";
+import sideImg16 from "/images/bags/Dior/Yellow_Patent_Cannage_Calfskin__1_-removebg-preview.png";
 
 const BagData = [
   {
