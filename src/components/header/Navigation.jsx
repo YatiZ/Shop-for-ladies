@@ -64,9 +64,8 @@ function Navigation() {
       title: "Help Center",
       path: "/help-center",
       drops: [
-        { label: "Q & A section", path: "?issues=Deliever Issues" },
-        { label: "Contact Us", path: "?issues=Contact Admin" },
-        {label:"Reviews", path:"?issues=Reviews"}
+        { label: "Contact Us", path: "/contact-us" },
+        {label:"Reviews", path:"/reviews"}
       ],
     },
   ];

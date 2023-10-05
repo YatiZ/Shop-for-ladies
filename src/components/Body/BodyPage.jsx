@@ -5,7 +5,7 @@ import SliderPage from "./SliderPage";
 // import User from "./User";
 
 function BodyPage(){
-    return <div className="">
+    return <div className="mb-12">
     
     <Content />
     {/* <MainImg/> */}

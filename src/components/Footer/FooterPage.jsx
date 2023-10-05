@@ -2,7 +2,7 @@
 
 function FooterPage(){
     return (
-        <div className="bg-yellow-200 mt-12 py-6 grid grid-cols-3 text-center border-t-red-600 border">
+        <div className="mt-auto bg-yellow-200 py-6 grid grid-cols-3 text-center border-t-red-600 border">
             <div>
                 <h1>Fashion Style</h1>
                 <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Voluptatum quis expedita quo fugiat quasi illum temporibus vel placeat magni quaerat! Voluptatum incidunt voluptas velit porro iste aliquid voluptatibus nemo doloribus.</p>

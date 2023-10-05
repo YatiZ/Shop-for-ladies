@@ -14,15 +14,15 @@ const SupportCenter = () => {
     setDropDown(updateDrop);
   };
   return (
-    <div className="mx-14 mt-7">
-      <div className="flex mr-44">
-        <label className="w-2/4 text-4xl font-Serif font-bold">
+    <div className="mt-9 container mx-auto lg:px-10 md:px-3">
+      <div className="grid grid-cols-2 lg:mx-52">
+        <label className=" text-4xl font-Serif font-bold">
           Help Center
         </label>
 
-        <Input type="text" placeholder="What can we help with?" />
+        <Input className='' type="text" placeholder="What can we help with?" />
       </div>
-      <div className="leading-9 underline underline-offset-8 mt-8 gap-2 p-4 grid grid-cols-4 text-sm backdrop-opacity-10 bg-white/40 backdrop-blur rounded-lg">
+      <div className="py-5 pl-12  justify-center leading-8 underline underline-offset-8 mt-8 gap-1 grid grid-cols-4 text-sm backdrop-opacity-10 bg-white/40 backdrop-blur rounded-lg">
         <div className="">
           <Link>Placing & Canceling Orders</Link>
           <br></br>
