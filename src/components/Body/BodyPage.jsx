@@ -11,7 +11,7 @@ function BodyPage(){
     {/* <MainImg/> */}
     {/* <User/> */}
     <SliderPage />
-    <FooterPage />
+    
     </div>
 }
 export default BodyPage;

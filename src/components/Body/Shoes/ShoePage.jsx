@@ -11,7 +11,7 @@ const ShoePage = () => {
   const filteredShoes = Shoes.filter((shoe)=>shoe.type === query.get("shoes"));
   const newShoes = (query.get("shoes")?filteredShoes: Shoes);
   const shoeData = newShoes.map((shoe,index)=>(
-    <div>
+    <div key={index}>
         <h1>{shoe.type}</h1>
         <ShoeData shoe={shoe}/>
     </div>

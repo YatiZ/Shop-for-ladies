@@ -5,9 +5,11 @@ import { Link } from "react-router-dom";
 import NavDrops from "./NavDrops";
 import { ShoppingBag } from "@mui/icons-material";
 import { ShopContext } from "../../../context/useShopContext";
+import SearchItem from "./SearchItem";
 
 function NavigateDrops({ navigateData }) {
   const [openDrops, setOpenDrops] = useState(false);
+  
   const { cart } = useContext(ShopContext);
 
   const handleOpenDrops = (id) => {
@@ -51,7 +53,7 @@ function NavigateDrops({ navigateData }) {
         {renderedData}
       </div>
       <div className="md:py-2 py-0 w-fit">
-        <Input type="text" placeholder="search items ..." />
+        <SearchItem/>
       </div>
       <div className="py-4">
         <Link to="/login">

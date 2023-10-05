@@ -4,25 +4,32 @@ import { useState } from 'react';
 import { IoClose } from 'react-icons/io5';
 import { ShopContext } from '../../../context/useShopContext';
 import { Button } from '@mui/material';
+import { SearchContext } from '../../../context/useGlobalSearch';
 
 
 const EachItem = ({thing}) => {
-    const {handleClick, handleDecrement, cart} = useContext(ShopContext);
+    const {globalSearch} = useContext(SearchContext)
+    const {handleClick, cart} = useContext(ShopContext);
     const [openImg, setOpenImg] = useState(false);
-
+   
+    const searchItem = thing.things.filter((item)=>(
+      item.name.toLowerCase().includes(globalSearch.toLowerCase())
+    ))
     const handleOpenImg=()=>{
         setOpenImg(!openImg)
        }
     
     // To show itemQty 
-    const productInCart = cart.find((item)=>item.id=== thing.id);
-    const quantityInCart = productInCart? productInCart.qty:0;
-  return (
-    <div>
+    const renderedData = searchItem.map((thing)=>{
+      const productInCart = cart.find((item)=>item.id=== thing.id);
+      const quantityInCart = productInCart? productInCart.qty:0;
+      return(
+<div>
         <div>
-                    {/* <p className="text-center text-xs">{thing.name}</p> */}
-                    <img src={thing.img} alt="thing" className="w-56 h-full" onClick={()=>handleOpenImg(thing)}/>
-                    {openImg? <Modal>
+                    <p className="text-center text-xs">{thing.name}</p>
+                    <img src={thing.img} alt="thing" className="w-56 h-full cursor-pointer hover:ring" onClick={()=>handleOpenImg(thing)}/>
+                   
+                    {openImg && <Modal>
                         <div className='flex justify-end px-4'>
                         <IoClose onClick={()=>handleOpenImg(thing)} />
                         </div>
@@ -43,12 +50,21 @@ const EachItem = ({thing}) => {
                             <button className='bg-slate-900 p-1 px-2 text-white w-full ' onClick={()=>handleClick(thing)}>Add To Cart</button> 
                             </div>
                     </div>
-                    </Modal>:<p>
-                   
-                        </p>}
+                    </Modal>}
                 </div>
     </div>
-  )
+      )
+    });
+    
+  return <>
+  {!!(searchItem.length)&& <div className="font-bold">{thing.type}</div>
+        }
+        <div className="grid md:grid-cols-4 grid-cols-2 p-3 mx-2 gap-2">
+        {renderedData}
+        
+        </div>
+  
+  </>
 }
 
 export default EachItem

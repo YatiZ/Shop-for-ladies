@@ -16,10 +16,9 @@ function BagPage() {
 
   const bagData = bags.map((data) => (
     <div key={data.id}>
-      <h1 className="font-bold mb-3">{data.brandName}</h1>
-      <div className="grid md:grid-cols-3 grid-cols-1 place-items-center gap-x-2 gap-y-4">
+      
         <EachBag data={data} />
-      </div>
+     
     </div>
   ));
   return (

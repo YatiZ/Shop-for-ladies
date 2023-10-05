@@ -9,22 +9,24 @@ function DiscountPage(){
     const query = new URLSearchParams(search);
     console.log(search)
     
-    console.log('hhhh',query.get("saletype"));
+    // console.log('hhhh',query.get("saletype"));
 
     const filteredSales = salesData.filter((sale)=> sale.name === query.get("saletype"));
 
     const checkingSales = (query.get("saletype")? filteredSales: salesData);
-    console.log(checkingSales)
+   
     const sales = checkingSales.map((sale,index)=>(
-        <div key={index}>
-            <h1>{sale.name}</h1>
-            <img src={sale.img} alt="sales"/>
+        <div key={index} className="mt-8">
+            <h1 className="font-Serif text-3xl outline-dashed flex justify-center bg-yellow-300">{sale.name}</h1>
+            {sale.component}
+            <hr className="h-10"/>
         </div>
     ))
     return (
         <div className="p-10">
             <h1>Sales</h1>
             {sales}
+        
         </div>
     )
 }

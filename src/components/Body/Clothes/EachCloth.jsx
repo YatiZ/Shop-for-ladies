@@ -6,20 +6,20 @@ import { AddShoppingCart } from "@mui/icons-material";
 import Cart from "../Shopping/Cart";
 import { useContext, useState } from "react";
 import { ShopContext } from "../../../context/useShopContext";
+import { SearchContext } from "../../../context/useGlobalSearch";
 
 
 function EachCloth({ cloth }) {
+  const {globalSearch} = useContext(SearchContext)
   const {cart,handleClick } = useContext(ShopContext);
-  const [order, setOrder] = useState(0);
-  const orderArray = []
 
-  
+  const searchItem = cloth.data.filter((item)=>(
+    item.name.toLowerCase().includes(globalSearch.toLowerCase())
+  ))
+  // console.log('Searching',searchItem)
 
-  const renderedOpenModal = cloth.data.map((d) =>{
-  //   const [count, setCount] = useState(0);
-  //   const handleClick = (d)=>{
-  //     setCount(count+1)
-  // }
+  const renderedOpenModal = searchItem.map((d) =>{
+
 
     const productInCart = cart.find((item)=> item.id === d.id );
     
@@ -62,7 +62,13 @@ function EachCloth({ cloth }) {
     </Panel>
     )
   });
-  return <>{renderedOpenModal} 
+  return <>
+  {!!(searchItem.length)&& <h1 className="font-bold mt-10">{cloth.type}</h1>}
+  <div className="grid md:grid-cols-3 grid-cols-1 place-items-center mx-10 mt-4 gap-y-5">
+        
+  {renderedOpenModal} 
+      </div>
+  
   
   </>;
   

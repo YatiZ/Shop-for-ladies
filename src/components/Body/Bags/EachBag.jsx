@@ -7,15 +7,23 @@ import { useState } from "react";
 import { FaHeart } from "react-icons/fa";
 import { useContext } from "react";
 import { ShopContext } from "../../../context/useShopContext";
+import { SearchContext } from "../../../context/useGlobalSearch";
 
 function EachBag({data}){
+    const {globalSearch} = useContext(SearchContext);
     const {cart,handleClick} = useContext(ShopContext);
     const [heart, setHeart] = useState(false);
+    
+    // Global Search fun using context 
+    const searchItem = data.data.filter((item)=>(
+        item.name.toLowerCase().includes(globalSearch.toLowerCase())
+    ))
+
     const handleClickHeart= (bag)=>{
        setHeart(!heart)
     }
     
-    const renderedData = data.data.map((bag)=>{
+    const renderedData = searchItem.map((bag)=>{
 
         const productInCart = cart.find((item)=>item.id === bag.id);
         
@@ -43,7 +51,11 @@ function EachBag({data}){
         </Panel>
      )});
      return<>
-     {renderedData}
+     {!!(searchItem.length) && <h1 className="font-bold mb-3">{data.brandName}</h1>}
+      <div className="grid md:grid-cols-3 grid-cols-1 place-items-center gap-x-2 gap-y-4">
+      {renderedData}
+      </div>
+   
      </>
     
 }

@@ -76,17 +76,19 @@ const SupportCenter = () => {
         {Questions.map((ques, index) => (
           <div className="mt-3" key={index}>
             <span className="">
-              {ques.question}{" "}
+              {ques.question}
               <KeyboardArrowDownIcon
                 onClick={() => handleDrop(index)}
                 className="cursor-pointer hover:text-blue-500"
               />
             </span>
+            
             {dropDown[index] && (
               <div className="mb-4 text-blue-900">
                 <span>{ques.answer}</span>
               </div>
             )}
+            <hr/>
           </div>
         ))}
       </div>

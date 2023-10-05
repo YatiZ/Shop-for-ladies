@@ -4,8 +4,8 @@ import { Link } from "react-router-dom";
 function NavDrops({data,navigateData}){
     
     
-    const dropData = data.drops.map((drop)=>(
-        <Link to={`${data.path}${drop.path}`} key={data.id}>
+    const dropData = data.drops.map((drop,index)=>(
+        <Link to={`${data.path}${drop.path}`} key={index}>
             <p className="py-1 px-3 hover:bg-yellow-300 hover:rounded-md m-0 hover:text-pink-600">{drop.label}</p>
         </Link>
         

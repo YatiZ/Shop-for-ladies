@@ -58,7 +58,7 @@ const BagData = [
         {id:30,name:'empreinte-leather-handbags',img:img8,price:3000,sideImg:img6,qty:0}
     ]},
     {id:6, brandName:'Zara', data:[
-        {id:31,name:'onthego-handbags',img:img9,price:3000,sideImg:sideImg9,qty:0},
+        {id:31,name:'zara',img:img9,price:3000,sideImg:sideImg9,qty:0},
         {id:32,name:'pochette-métis-handbags',img:img6,price:5000, sideImg:img5,qty:0},
         {id:33,name:'side-trunk-handbags',img:img7,price:5000,sideImg:img8,qty:0},
         {id:34,name:'empreinte-leather-handbags',img:img8,price:3000,sideImg:img6,qty:0}

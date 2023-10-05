@@ -15,6 +15,7 @@ import UserRegister from "./components/Body/Login/UserRegister";
 import ShoePage from "./components/Body/Shoes/ShoePage";
 import ShopPage from "./components/Body/Shopping/ShopPage";
 import SupportCenter from "./components/Body/Help/SupportCenter";
+import FooterPage from "./components/Footer/FooterPage";
 
 
 function App() {
@@ -40,7 +41,7 @@ function App() {
         <Route path="/sign-up" element={<UserRegister />} />
         <Route path="*" element={<NotFound />} />
       </Routes>
-      
+      <FooterPage/>
     </>
   );
 }
