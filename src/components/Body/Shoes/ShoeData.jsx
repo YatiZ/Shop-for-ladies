@@ -14,10 +14,10 @@ const ShoeData = ({ shoe }) => {
     const qtyAmount = quantityInCart >0?quantityInCart:0;
     
     return (
-      <Panel key={index} className='w-fit container mx-2 pb-4'>
-        <div className="">
-        <img src={cornerBanner} alt="saleBanner" className="w-24 absolute"/>   
-        <img className="w-fit" src={d.img} alt="img"/>
+      <Panel key={index} className='w-fit container mx-2 pb-2 mb-5'>
+        <div className="w-fit">
+        <img src={cornerBanner} alt="saleBanner" className="w-32 object-cover absolute"/>   
+        <img className="w-full h-full object-cover" src={d.img} alt="img"/>
         </div>
        
         <div className="mt-3 px-3">
@@ -44,7 +44,7 @@ const ShoeData = ({ shoe }) => {
     );
   });
 
-  return <div className="grid grid-cols-3 gap-4 px-10">
+  return <div className="grid lg:grid-cols-3 grid-cols-1 p-10 lg:gap-4 lg:px-10 ">
     {renderedItems}</div>;
 };
 

@@ -10,7 +10,7 @@ const SearchItem = () => {
   return (
     <div>
          <Input type="text" placeholder="search items..." onChange={(e)=>handleSearchValue(e.target.value)} value={globalSearch}/>
-         {globalSearch}
+        
     </div>
   )
 }

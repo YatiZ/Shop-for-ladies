@@ -65,7 +65,7 @@ const OrderSummary = ({ cart }) => {
   }
 
   return (
-    <Panel className="p-4 tracking-wide fixed">
+    <Panel className="p-4 tracking-wide mx-6 lg:mx-0">
       
       <h1 className="text-center font-Serif font-bold text-xl">
         Order Summary
@@ -124,10 +124,10 @@ const OrderSummary = ({ cart }) => {
           <img src={helpImg} alt="help" className="w-20" />
         </Link>
       </div>
-      <div className="flex justify-center mt-3 ">
-        <button className="bg-yellow-300 px-32 py-1">
+      <div className="flex justify-center  mt-3 ">
+        <button className="bg-yellow-300 lg:px-32 px-24 text-center py-1">
           <LockIcon className="py-0.5" />
-          Checkout
+          <span>Checkout</span>
         </button>
       </div>
       {/* {cart.map((item) => (

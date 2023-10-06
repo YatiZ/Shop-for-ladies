@@ -6,6 +6,7 @@ import NavDrops from "./NavDrops";
 import { ShoppingBag } from "@mui/icons-material";
 import { ShopContext } from "../../../context/useShopContext";
 import SearchItem from "./SearchItem";
+import { Badge } from "@mui/material";
 
 function NavigateDrops({ navigateData }) {
   const [openDrops, setOpenDrops] = useState(false);
@@ -30,7 +31,7 @@ function NavigateDrops({ navigateData }) {
       </Link>
 
       {openDrops === data.id && (
-        <div className="md:ml-0 ml-36 mt-0">
+        <div className="md:ml-0 ml-0 md:mt-0 ">
           <NavDrops data={data} />
         </div>
       )}
@@ -42,35 +43,35 @@ function NavigateDrops({ navigateData }) {
   }, 0);
   
   return (
-    <div className={`md:flex gap-8`}>
-      {/* <div className="absolute right-8 top-5 text-xl cursor-pointer md:hidden" onClick={handleOpenMenu}>
-        {openMenu? <IoMdClose/> :<FcMenu/> }
-      </div> */}
+   
       <div
-        className="block md:flex gap-8 items-center"
+        className="block md:flex gap-4 lg:gap-8 items-center lg:text-sm text-xs"
         onMouseLeave={handleMouseLeave}
       >
         {renderedData}
-      </div>
-      <div className="md:py-2 py-0 w-fit">
+        <div className="md:py-2 py-0 w-fit">
         <SearchItem/>
       </div>
+ 
       <div className="py-4">
         <Link to="/login">
           <BiLogInCircle className="text-2xl " />
         </Link>
       </div>
-      <div className="mt-2 mr-10">
+      <Badge badgeContent={totalQty} className=" outline-pink-500 outline rounded-full" color="primary">
         <Link to="/shopping-bag">
-          <div className="outline-pink-500 outline rounded-full px-2 py-2">
-            <ShoppingBag className="text-2xl" />
-            <div className="bg-red-500 px-2 py-1 mr-6 rounded-full absolute top-1 right-10">
-              <p className="text-xs">{totalQty}</p>
-            </div>
+          <div className="px-1 py-1">
+          <ShoppingBag className="text-2xl" />
           </div>
+            
+           
         </Link>
+      </Badge>
+
       </div>
-    </div>
+      
+      
+ 
   );
 }
 export default NavigateDrops;

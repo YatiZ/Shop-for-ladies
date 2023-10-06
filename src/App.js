@@ -13,7 +13,6 @@ import SignInPage from "./components/Body/Login/SignInPage";
 import ShoppingBagPage from "./components/Body/Shopping/BagPage";
 import UserRegister from "./components/Body/Login/UserRegister";
 import ShoePage from "./components/Body/Shoes/ShoePage";
-import ShopPage from "./components/Body/Shopping/ShopPage";
 import SupportCenter from "./components/Body/Help/SupportCenter";
 import FooterPage from "./components/Footer/FooterPage";
 import Testing from "./components/Body/Help/testing";
@@ -44,7 +43,7 @@ function App() {
 
         <Route path="/login" element={<SignInPage />} />
         <Route path="/shopping-bag" element={<ShoppingBagPage />} />
-        <Route path="/shop-page" element={<ShopPage />} />
+       
         <Route path="/sign-up" element={<UserRegister />} />
         <Route path="*" element={<NotFound />} />
       </Routes>
