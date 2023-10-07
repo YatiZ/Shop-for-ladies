@@ -1,5 +1,5 @@
 import { useContext, useState } from "react";
-import { BiLogInCircle } from "react-icons/bi";
+import { BiHeartCircle, BiLogInCircle } from "react-icons/bi";
 import Input from "../../../reusable/Input";
 import { Link } from "react-router-dom";
 import NavDrops from "./NavDrops";
@@ -10,7 +10,7 @@ import { Badge } from "@mui/material";
 
 function NavigateDrops({ navigateData }) {
   const [openDrops, setOpenDrops] = useState(false);
-  
+
   const { cart } = useContext(ShopContext);
 
   const handleOpenDrops = (id) => {
@@ -41,37 +41,39 @@ function NavigateDrops({ navigateData }) {
   const totalQty = cart.reduce((prev, c) => {
     return prev + c.qty;
   }, 0);
-  
+
   return (
-   
-      <div
-        className="block md:flex gap-4 lg:gap-8 items-center lg:text-sm text-xs"
-        onMouseLeave={handleMouseLeave}
-      >
-        {renderedData}
-        <div className="md:py-2 py-0 w-fit">
-        <SearchItem/>
+    <div
+      className="block md:flex gap-4 lg:gap-8 items-center lg:text-sm text-xs"
+      onMouseLeave={handleMouseLeave}
+    >
+      {renderedData}
+      <div className="md:py-2 py-0 w-fit">
+        <SearchItem />
       </div>
- 
+
       <div className="py-4">
         <Link to="/login">
           <BiLogInCircle className="text-2xl " />
         </Link>
       </div>
-      <Badge badgeContent={totalQty} className=" outline-pink-500 outline rounded-full" color="primary">
+      <div>
+        <Link to="/favorite-collections">
+          <BiHeartCircle className="text-2xl mb-3" />
+        </Link>
+      </div>
+      <Badge
+        badgeContent={totalQty}
+        className=" outline-pink-500 outline rounded-full"
+        color="primary"
+      >
         <Link to="/shopping-bag">
           <div className="px-1 py-1">
-          <ShoppingBag className="text-2xl" />
+            <ShoppingBag className="text-2xl" />
           </div>
-            
-           
         </Link>
       </Badge>
-
-      </div>
-      
-      
- 
+    </div>
   );
 }
 export default NavigateDrops;

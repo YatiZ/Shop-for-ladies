@@ -4,6 +4,7 @@ import Navigation from "./Navigation";
 import { useState } from "react";
 import {FcMenu} from "react-icons/fc";
 import {IoMdClose} from "react-icons/io";
+import { Link } from "react-router-dom";
 
 
 function Header() {
@@ -17,7 +18,7 @@ function Header() {
     <div className="w-full top-0 left-0 h-14">
       <div className="md:flex bg-yellow-200 py-2 md:px-8 md:text-l text-sm px-7 md:justify-around">
       <div className="font-bold md:text-xl cursor-pointer flex items-center md:mt-0 mt-4">
-        <a href="/">LOGO</a>
+        <Link to="/">Logo</Link>
       </div>
       <div className="absolute right-8 top-5 text-xl cursor-pointer md:hidden" onClick={handleOpenMenu}>
         {openMenu? <IoMdClose/> :<FcMenu/> }

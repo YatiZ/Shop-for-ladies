@@ -18,6 +18,8 @@ import FooterPage from "./components/Footer/FooterPage";
 import Testing from "./components/Body/Help/testing";
 import ContactAdmin from "./components/Body/Help/contactAdmin";
 import ReviewPage from "./components/Body/Review/ReviewPage";
+import FavoritePage from "./components/Body/FavoritePage";
+
 
 function App() {
   return (
@@ -25,6 +27,7 @@ function App() {
       <Header />
       
       <Routes>
+      <Route path="/favorite-collections" element={<FavoritePage/>}></Route>
       <Route path="/testing" element={<Testing />}></Route>
 
         <Route path="/" element={<BodyPage />}></Route>

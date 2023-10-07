@@ -5,30 +5,22 @@ import EachItem from "./EachItem";
 import { SearchContext } from "../../../context/useGlobalSearch";
 import { useContext } from "react";
 
-function AccessoriesPage(){
-    
-    const {search} = useLocation();
-    const query = new URLSearchParams(search);
+function AccessoriesPage() {
+  const { search } = useLocation();
+  const query = new URLSearchParams(search);
 
-    
-    
+  const filteredAccessories = data.filter(
+    (d) => d.type === query.get("accessories")
+  );
 
-    const filteredAccessories = data.filter((d)=>d.type === query.get("accessories"));
+  const accessData = query.get("accessories") ? filteredAccessories : data;
 
-    const accessData = query.get('accessories')? filteredAccessories: data;
-    
-    const accessories = accessData.map((d,index)=>(
-        <div key={index} className="p-2">
-        <EachItem thing={d}/>
-        </div>
-    ))
-    return (
-        <div>This is Accessories Page
-
-            {accessories}
-            
-        </div>
-    )
+  const accessories = accessData.map((d, index) => (
+    <div key={index} className="p-2">
+      <EachItem thing={d} />
+    </div>
+  ));
+  return <div>{accessories}</div>;
 }
 
 export default AccessoriesPage;

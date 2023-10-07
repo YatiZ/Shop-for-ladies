@@ -24,7 +24,7 @@ function DiscountPage(){
     ))
     return (
         <div className="p-10">
-            <h1>Sales</h1>
+            <h1 className="font-Serif text-3xl underline">Special Sales</h1>
             {sales}
         
         </div>

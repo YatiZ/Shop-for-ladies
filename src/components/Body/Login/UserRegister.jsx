@@ -1,24 +1,36 @@
-import React from "react";
+import React, { useState } from "react";
 import Form from "../../../reusable/Form";
 import Input from "../../../reusable/Input";
 import { FIELDS } from "./InputField";
 import { Radio, RadioGroup } from "@mui/material";
 import useForm from "../../../hooks/useForm";
 import axios from "axios";
+import { ToastContainer,toast } from "react-toastify";
 
 const UserRegister = () => {
-  const initialValue = {};
+  
+  
   //   const history = useHistory();
-  const [values, handleChange, resetForm] = useForm(initialValue);
+  const [values, handleChange, resetForm] = useForm({});
+  const [formSubmit, setFormSubmit] = useState(false);
 
   const handleSubmit = async (event) => {
     event.preventDefault();
 
+    // setFormSubmit(true);
+    // if(!values.username){
+    //   console.log("Username is required!")
+    // }
+    
     try {
       await axios
         .post("http://127.0.0.1:8000/register/", values)
-        .then((response) => console.log(response));
-
+        .then((response) => console.log(response.data));
+        
+        toast.success('Your account successfully created!',{
+          position:'bottom-right',
+          autoClose:3000
+        });
       window.location.href = "/login";
     } catch (error) {
       console.log(error);
@@ -44,7 +56,10 @@ const UserRegister = () => {
                   name={field.name}
                   value={values[field.name] || ""}
                 />
-                {/* {field.name === 'username' && (values.username.length === 0) && <div>username is required</div>} */}
+                {/* {field.name === "username" && !values.username && <div className="text-red-600 text-xs font-bold tracking-widest">
+            Username is required
+          </div>} */}
+                {formSubmit && !values.username && <div className="text-red-600 text-xs font-bold tracking-widest">{field.label} is required!</div>}
                 {field.name === "password" && values.password.length !== 8 && (
                   <div className="text-red-600 text-xs font-bold tracking-widest">
                     You need to enter a password with exactly 8 characters

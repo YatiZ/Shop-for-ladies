@@ -8,19 +8,28 @@ import { FaHeart } from "react-icons/fa";
 import { useContext } from "react";
 import { ShopContext } from "../../../context/useShopContext";
 import { SearchContext } from "../../../context/useGlobalSearch";
+import { FavoriteContext } from "../../../context/useFavorite";
 
 function EachBag({data}){
     const {globalSearch} = useContext(SearchContext);
     const {cart,handleClick} = useContext(ShopContext);
-    const [heart, setHeart] = useState(false);
+    const {addToFav, removeFav,favorites} = useContext(FavoriteContext);
+    
     
     // Global Search fun using context 
     const searchItem = data.data.filter((item)=>(
         item.name.toLowerCase().includes(globalSearch.toLowerCase())
-    ))
+    )) 
 
-    const handleClickHeart= (bag)=>{
-       setHeart(!heart)
+    const isFavorite =(bag)=> favorites.some((favItem)=>favItem.id === bag.id)
+
+    const toggleFavorite= (bag)=>{
+        if(isFavorite(bag)){
+            removeFav(bag)
+        }else{
+            addToFav(bag)
+        }
+       
     }
     
     const renderedData = searchItem.map((bag)=>{
@@ -33,8 +42,8 @@ function EachBag({data}){
         <Panel className='text-center' key={bag.id}>
         <div className="flex flex-row justify-center">
         <p className="mt-2">{bag.name}</p>
-        <button className="text-xl px-1 mt-2" onClick={()=>handleClickHeart(bag)}>
-        {!heart? <AiOutlineHeart/>: <FaHeart color="red"/> }
+        <button className="text-xl px-1 mt-2" onClick={()=>toggleFavorite(bag)}>
+        {isFavorite(bag)? <FaHeart color="red"/> : <AiOutlineHeart/>}
         </button>
         </div>
     

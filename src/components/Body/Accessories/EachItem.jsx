@@ -10,35 +10,39 @@ import ModelAccess from "./ModelAccess";
 const EachItem = ({ thing }) => {
   const { globalSearch } = useContext(SearchContext);
   const { handleClick, cart } = useContext(ShopContext);
-  const [openImg, setOpenImg] = useState(false);
+  const [openImg, setOpenImg] = useState({});
 
   const searchItem = thing.things.filter((item) =>
     item.name.toLowerCase().includes(globalSearch.toLowerCase())
   );
-  const handleOpenImg = () => {
-    setOpenImg(!openImg);
+  const handleOpenImg = (itemId) => {
+    setOpenImg((prevOpenImg)=>({
+      ...prevOpenImg,
+      [itemId]: !prevOpenImg[itemId],
+    }))
+  
   };
 
   // To show itemQty
-  const renderedData = searchItem.map((thing) => {
-    const productInCart = cart.find((item) => item.id === thing.id);
+  const renderedData = searchItem.map((d,index) => {
+    const productInCart = cart.find((item) => item.id === d.id);
     const quantityInCart = productInCart ? productInCart.qty : 0;
     return (
-      <div>
+      <div key={index}>
         <div>
-          <p className="text-center text-xs">{thing.name}</p>
+          <p className="text-center text-xs">{d.name}</p>
           <img
-            src={thing.img}
+            src={d.img}
             alt="thing"
             className="w-56 h-full cursor-pointer hover:ring"
-            onClick={() => handleOpenImg(thing)}
+            onClick={() => handleOpenImg(d.id)}
           />
 
-          {openImg && (
+          {openImg[d.id] && (
             <ModelAccess
               quantityInCart={quantityInCart}
               handleOpenImg={handleOpenImg}
-              thing={thing}
+              thing={d}
               handleClick={handleClick}
             />
           )}
