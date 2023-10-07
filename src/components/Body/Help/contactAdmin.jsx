@@ -1,7 +1,47 @@
-import { Button } from "@mui/material";
+import { useState } from "react";
 import Input from "../../../reusable/Input";
 import { Link } from "react-router-dom";
+import axios from "axios";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
+
 function ContactAdmin() {
+  const [info, setInfo] = useState({
+    first_name: "",
+    last_name: "",
+    email: "",
+    phone_number: "",
+    messages: "",
+  });
+  const handleInfoChange = (event) => {
+    const { name, value } = event.target;
+    return setInfo({ ...info, [name]: value });
+  };
+  //   console.log(info)
+  const handleSubmit = (event) => {
+    event.preventDefault();
+    axios
+      .post("http://127.0.0.1:8000/user_messages/", info)
+      .then((response) => {
+        console.log(response.data);
+
+        toast.success(
+          "Your messages have been successfully sent! Thanks for letting us know.",
+          {
+            position: "bottom-right",
+            autoClose: 2000,
+          }
+        );
+        setInfo({
+          first_name: "",
+          last_name: "",
+          email: "",
+          phone_number: "",
+          messages: "",
+        });
+      })
+      .catch((err) => console.log(err));
+  };
   return (
     <div className="container mx-auto mt-5">
       <div className="grid py-5 lg:px-0 px-7">
@@ -12,22 +52,52 @@ function ContactAdmin() {
           Our team of customer care ninjas is ready to hear from you
         </p>
       </div>
-      <hr className="my-5"></hr>
+      <hr className="my-3"></hr>
       <div className="grid lg:grid-cols-2 lg:p-8 p-5 lg:text-base text-xs gap-4">
         <div>
-          <h1 className="lg:text-2xl text-lg font-Serif">Reach out to us!</h1>
+          <h1 className="lg:text-2xl text-lg font-Serif mt-0.5">
+            Reach out to us!
+          </h1>
           <p className="pt-5">
             Got a question about this website? Are you interested in purchasing
             items? Have some suggestions or just want to say hi? Contact us.
           </p>
-          <form className="grid grid-cols-1 gap-4 pt-3">
-            <Input type="text" placeholder="First name" />
-            <Input type="text" placeholder="Last name" />
-            <Input type="email" placeholder="Your Email Address" />
-            <Input type="text" placeholder="Phone Number" />
+          <form className="grid grid-cols-1 gap-4 pt-3" onSubmit={handleSubmit}>
+            <Input
+              type="text"
+              placeholder="First name"
+              name="first_name"
+              value={info.first_name}
+              onChange={handleInfoChange}
+            />
+            <Input
+              type="text"
+              placeholder="Last name"
+              name="last_name"
+              value={info.last_name}
+              onChange={handleInfoChange}
+            />
+            <Input
+              type="email"
+              placeholder="Your Email Address"
+              name="email"
+              value={info.email}
+              onChange={handleInfoChange}
+            />
+            <Input
+              type="text"
+              placeholder="Phone Number"
+              name="phone_number"
+              value={info.phone_number}
+              onChange={handleInfoChange}
+            />
             <textarea
               className="backdrop-opacity-10 bg-white/40 backdrop-blur rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-1 md:p-2 tracking-wider shadow-md"
               placeholder="Message"
+              type="text"
+              name="messages"
+              value={info.messages}
+              onChange={handleInfoChange}
             ></textarea>
             <button className="p-2 bg-green-500">SUBMIT</button>
           </form>
@@ -88,17 +158,16 @@ function ContactAdmin() {
                   src="https://www.edigitalagency.com.au/wp-content/uploads/Facebook-logo-blue-circle-large-transparent-png.png"
                   alt="facebookLogo"
                 />
-                
               </div>
               <p className="px-3">
-                  Be the first on your block to get product updates,
-                  announcements,news and lots of really good content,
-                  <span className="text-blue-400">
-                    like us on Facebook today!
-                  </span>
-                </p>
+                Be the first on your block to get product updates,
+                announcements,news and lots of really good content,
+                <span className="text-blue-400">
+                  like us on Facebook today!
+                </span>
+              </p>
             </div>
-            
+
             <div className="flex flex-row mt-3">
               <div className="lg:w-28 lg:h-12 h-11 w-28 md:w-12">
                 <img
@@ -106,7 +175,6 @@ function ContactAdmin() {
                   src="https://toppng.com/uploads/preview/ew-instagram-logo-transparent-related-keywords-logo-instagram-vector-2017-115629178687gobkrzwak.png"
                   alt="instaLogo"
                 />
-                
               </div>
               <p className="px-3">
                 Want the best tips on conversion optimization,landing pages,
@@ -115,9 +183,8 @@ function ContactAdmin() {
                   follow us on Twitter at @DollyShop
                 </Link>
               </p>
+             <ToastContainer/>
             </div>
-
-        
           </div>
         </div>
       </div>

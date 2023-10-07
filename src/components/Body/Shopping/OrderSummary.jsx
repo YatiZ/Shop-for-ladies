@@ -130,11 +130,7 @@ const OrderSummary = ({ cart }) => {
           <span>Checkout</span>
         </button>
       </div>
-      {/* {cart.map((item) => (
-                <div key={item.id}>
-                  {item.qty}*{item.price}
-                </div>
-              ))} */}
+     
     </Panel>
   );
 };

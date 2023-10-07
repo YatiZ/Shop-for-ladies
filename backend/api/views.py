@@ -2,8 +2,8 @@
 from django.http import HttpResponse
 from django.http import Http404
 from django.contrib.auth.models import User
-from .models import UserAccount,PromoCode
-from .serializers import RegisterSerializer
+from .models import UserAccount,PromoCode,UserMessage
+from .serializers import RegisterSerializer,UserMessageSerializer
 from rest_framework.response import Response
 from rest_framework.decorators import api_view
 from rest_framework import status
@@ -44,4 +44,10 @@ def promo_code_validation(request):
     except PromoCode.DoesNotExist:
         return Response({'valid':False,'message':'Invalid promo code'})
 
-
+@api_view(['POST'])
+def user_messages(request):
+    serializer = UserMessageSerializer(data = request.data)
+    if serializer.is_valid():
+        serializer.save()
+        return Response(serializer.data, status=status.HTTP_201_CREATED)
+    return Response(serializer.errors,status= status.HTTP_400_BAD_REQUEST)
