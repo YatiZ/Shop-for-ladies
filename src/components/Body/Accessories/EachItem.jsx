@@ -6,11 +6,26 @@ import { ShopContext } from "../../../context/useShopContext";
 import { Button } from "@mui/material";
 import { SearchContext } from "../../../context/useGlobalSearch";
 import ModelAccess from "./ModelAccess";
+import { AiOutlineHeart } from "react-icons/ai";
+import { FavoriteContext } from "../../../context/useFavorite";
+import { FaHeart } from "react-icons/fa";
 
 const EachItem = ({ thing }) => {
+  const {favorites, addToFav, removeFav} = useContext(FavoriteContext);
   const { globalSearch } = useContext(SearchContext);
   const { handleClick, cart } = useContext(ShopContext);
   const [openImg, setOpenImg] = useState({});
+
+  //for favorites toggle
+  const isFavorite =(d)=> favorites.some((favItem)=>favItem.id ===d.id )
+  const toggleClick =(d)=>{
+    
+    if(isFavorite(d)){
+      removeFav(d)
+    }else{
+      addToFav(d)
+    }
+  }
 
   const searchItem = thing.things.filter((item) =>
     item.name.toLowerCase().includes(globalSearch.toLowerCase())
@@ -30,7 +45,14 @@ const EachItem = ({ thing }) => {
     return (
       <div key={index}>
         <div>
+          <div className="flex flex-row justify-evenly">
           <p className="text-center text-xs">{d.name}</p>
+          <button onClick={()=>toggleClick(d)} className="text-xl">
+          {isFavorite(d)? <FaHeart color="red"/> : <AiOutlineHeart/>}
+          </button>
+          
+          </div>
+          
           <img
             src={d.img}
             alt="thing"

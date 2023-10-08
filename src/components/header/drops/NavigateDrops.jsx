@@ -59,7 +59,7 @@ function NavigateDrops({ navigateData }) {
       </div>
       <div>
         <Link to="/favorite-collections">
-          <BiHeartCircle className="text-2xl mb-3" />
+          <BiHeartCircle className="text-2xl mb-3 lg:my-1" />
         </Link>
       </div>
       <Badge

@@ -7,16 +7,29 @@ import Cart from "../Shopping/Cart";
 import { useContext, useState } from "react";
 import { ShopContext } from "../../../context/useShopContext";
 import { SearchContext } from "../../../context/useGlobalSearch";
+import { FavoriteContext, FavoriteProvider } from "../../../context/useFavorite";
+import { AiOutlineHeart } from "react-icons/ai";
 
 
 function EachCloth({ cloth }) {
   const {globalSearch} = useContext(SearchContext)
   const {cart,handleClick } = useContext(ShopContext);
+  const {favorites, addToFav, removeFav} = useContext(FavoriteContext);
+  
+  const isFavorite = (d)=>favorites.some((favItem)=>favItem.id === d.id);
+
+  const toggleFavorite =(d)=>{
+     if(isFavorite(d)){
+      removeFav(d)
+     }else{
+      addToFav(d)
+     }
+  }
 
   const searchItem = cloth.data.filter((item)=>(
     item.name.toLowerCase().includes(globalSearch.toLowerCase())
   ))
-  // console.log('Searching',searchItem)
+
 
   const renderedOpenModal = searchItem.map((d) =>{
 
@@ -50,7 +63,9 @@ function EachCloth({ cloth }) {
          <ClothModal d={d} />
          <div className="flex justify-between">
          <p className="text-blue-500 font-black">${d.price}</p>
-         <p><FaHeart/></p>
+         <button onClick={()=>toggleFavorite(d)} className="text-xl">
+          {isFavorite(d)? <FaHeart className="text-red-500"/> : <AiOutlineHeart/>}
+         </button>
          </div>
          <div className="flex justify-start">
            <ColorData colors={d.color} sizes={d.size}/>

@@ -37,6 +37,7 @@ const BagData = [
         price: 3000,
         sideImg: sideImg1,
         qty: 0,
+        
       },
       {
         id: 12,
