@@ -1,13 +1,22 @@
-import React, { useContext, useState } from 'react'
+import React, { useContext, useEffect, useState } from 'react'
 import { FavoriteContext } from '../../context/useFavorite'
-import { Link } from 'react-router-dom';
+import { Link, useNavigate, useRoutes } from 'react-router-dom';
 import Modal from '../../reusable/Modal';
 import ItemsDetails from './ItemsDetails';
+import { UserContext } from '../../context/useInfoUser';
 
 const FavoritePage = () => {
-  
+  const {userInfo} = useContext(UserContext);
+  console.log(userInfo)
   const {favorites} = useContext(FavoriteContext);
   const [showDetail, setShowDetail] = useState({});
+  const router = useNavigate()
+
+  useEffect(()=>{
+    if(!userInfo){
+        router('/login')
+     }
+  },[])
   const handleClick =(favId)=>{
      
      setShowDetail((prevOpenImg)=>(

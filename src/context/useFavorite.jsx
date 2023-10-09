@@ -7,8 +7,11 @@ const FavoriteProvider = ({children}) => {
   const addToFav = (itemId)=>{
      setFavorites((prevFav)=>[...prevFav,itemId]);
   }
+  console.log(favorites)
   const removeFav = (itemId)=>{
-    setFavorites((prevFav)=>prevFav.filter((favItem)=>favItem.id!== itemId))
+    // console.log(itemId)
+    setFavorites((prevFav)=>prevFav.filter((favItem)=>favItem !== itemId))
+    
   }
   return (
     <FavoriteContext.Provider value={{removeFav,addToFav,favorites}}>

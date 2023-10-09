@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useContext } from "react";
 import Form from "../../../reusable/Form";
 import Square from "../../../reusable/Square";
 import Input from "../../../reusable/Input";
@@ -6,30 +6,35 @@ import Button from "../../../reusable/Button";
 import { Link } from "react-router-dom";
 import axios from "axios";
 import useForm from "../../../hooks/useForm";
+import { UserContext } from "../../../context/useInfoUser";
 
 const SignInPage = () => {
   const initialValue = {};
   const [values, handleChange] = useForm(initialValue);
+  const {userInfo, setUserInfo} = useContext(UserContext);
+
   const handleSubmit = async (event) => {
     
     event.preventDefault();
-    try {
-      const response = await axios.get(
-        "http://127.0.0.1:8000/accounts/",
-        values
-      );
-      // .then((response)=> console.log(response.data));
-      const filteredData = response.data.filter((data) => {
-        return data.password === values.password && data.email === values.email;
-      });
-      if (filteredData.length > 0) {
-        window.location.href = "/";
-      } else {
-        console.log("No matching data found");
-      }
-    } catch (error) {
-      console.log(error);
-    }
+    setUserInfo(values)
+  
+    // try {
+    //   const response = await axios.get(
+    //     "http://127.0.0.1:8000/accounts/",
+    //     values
+    //   );
+    //   // .then((response)=> console.log(response.data));
+    //   const filteredData = response.data.filter((data) => {
+    //     return data.password === values.password && data.email === values.email;
+    //   });
+    //   if (filteredData.length > 0) {
+    //     window.location.href = "/";
+    //   } else {
+    //     console.log("No matching data found");
+    //   }
+    // } catch (error) {
+    //   console.log(error);
+    // }
   };
   return (
     <div className="my-20 block">
