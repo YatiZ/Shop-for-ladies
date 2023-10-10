@@ -19,6 +19,7 @@ import Testing from "./components/Body/Help/testing";
 import ContactAdmin from "./components/Body/Help/contactAdmin";
 import ReviewPage from "./components/Body/Review/ReviewPage";
 import FavoritePage from "./components/Body/FavoritePage";
+import UserPage from "./components/User/UserPage";
 
 
 function App() {
@@ -29,7 +30,7 @@ function App() {
       <Routes>
       <Route path="/favorite-collections" element={<FavoritePage/>}></Route>
       <Route path="/testing" element={<Testing />}></Route>
-
+      <Route path="/account" element={<UserPage/>}></Route>
         <Route path="/" element={<BodyPage />}></Route>
 
         <Route path="/clothes" element={<ClothesPage />}></Route>

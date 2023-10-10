@@ -3,7 +3,7 @@ import Form from "../../../reusable/Form";
 import Square from "../../../reusable/Square";
 import Input from "../../../reusable/Input";
 import Button from "../../../reusable/Button";
-import { Link } from "react-router-dom";
+import { Link, useRoutes,useHistory, useNavigate } from "react-router-dom";
 import axios from "axios";
 import useForm from "../../../hooks/useForm";
 import { UserContext } from "../../../context/useInfoUser";
@@ -13,11 +13,13 @@ const SignInPage = () => {
   const [values, handleChange] = useForm(initialValue);
   const {userInfo, setUserInfo} = useContext(UserContext);
 
+  const navigate = useNavigate();
   const handleSubmit = async (event) => {
     
     event.preventDefault();
     setUserInfo(values)
-  
+    
+    navigate('/');
     // try {
     //   const response = await axios.get(
     //     "http://127.0.0.1:8000/accounts/",

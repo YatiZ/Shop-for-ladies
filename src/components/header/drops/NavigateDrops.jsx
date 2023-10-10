@@ -4,15 +4,26 @@ import Input from "../../../reusable/Input";
 import { Link } from "react-router-dom";
 import NavDrops from "./NavDrops";
 import { ShoppingBag } from "@mui/icons-material";
+import AccountCircleIcon from '@mui/icons-material/AccountCircle';
 import { ShopContext } from "../../../context/useShopContext";
 import SearchItem from "./SearchItem";
 import { Badge } from "@mui/material";
+import { UserContext } from "../../../context/useInfoUser";
+import UserDrops from "../../User/UserDrops";
 
 function NavigateDrops({ navigateData }) {
   const [openDrops, setOpenDrops] = useState(false);
+  const [userDrops, setUserDrops] = useState(false);
+  const {userInfo} = useContext(UserContext);
 
   const { cart } = useContext(ShopContext);
 
+  const handleUserDrops =()=>{
+    setUserDrops()
+  }
+  const handleUserCloseDrops = ()=>{
+    setUserDrops("")
+  }
   const handleOpenDrops = (id) => {
     setOpenDrops(id);
   };
@@ -52,11 +63,18 @@ function NavigateDrops({ navigateData }) {
         <SearchItem />
       </div>
 
-      <div className="py-4">
+       <div className="py-4">
+        {userInfo? <Link to="/account" onMouseEnter={handleUserDrops} onMouseOut={handleUserCloseDrops}><AccountCircleIcon className="text-2xl hover:text-pink-400"/>
+        
+        </Link>: 
         <Link to="/login">
           <BiLogInCircle className="text-2xl " />
-        </Link>
+        </Link>}
+        {userDrops && <div className=" bg-yellow-400">
+           <p>Hello</p>
+        </div>}
       </div>
+
       <div>
         <Link to="/favorite-collections">
           <BiHeartCircle className="text-2xl mb-3 lg:my-1" />
