@@ -19,7 +19,7 @@ function NavigateDrops({ navigateData }) {
   const { cart } = useContext(ShopContext);
 
   const handleUserDrops =()=>{
-    setUserDrops()
+    setUserDrops(true)
   }
   const handleUserCloseDrops = ()=>{
     setUserDrops("")
@@ -64,14 +64,14 @@ function NavigateDrops({ navigateData }) {
       </div>
 
        <div className="py-4">
-        {userInfo? <Link to="/account" onMouseEnter={handleUserDrops} onMouseOut={handleUserCloseDrops}><AccountCircleIcon className="text-2xl hover:text-pink-400"/>
+        {userInfo? <div onMouseEnter={handleUserDrops} ><AccountCircleIcon className="text-2xl hover:text-pink-400"/>
         
-        </Link>: 
+        </div>: 
         <Link to="/login">
           <BiLogInCircle className="text-2xl " />
         </Link>}
         {userDrops && <div className=" bg-yellow-400">
-           <p>Hello</p>
+           <UserDrops handleUserCloseDrops={handleUserCloseDrops}/>
         </div>}
       </div>
 
