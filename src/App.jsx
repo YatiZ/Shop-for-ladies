@@ -26,7 +26,6 @@ function App() {
   return (
     <div className="min-h-screen flex flex-col">
       <Header />
-      
       <Routes>
       <Route path="/favorite-collections" element={<FavoritePage/>}></Route>
       <Route path="/testing" element={<Testing />}></Route>

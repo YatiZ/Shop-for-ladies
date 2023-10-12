@@ -16,6 +16,8 @@
     "@testing-library/react": "^13.0.0",
     "@testing-library/user-event": "^13.2.1",
     "@trendyol-js/react-carousel": "^3.0.2",
+    "@vitejs/plugin-react": "^4.1.0",
+    "@vitejs/plugin-react-swc": "^3.4.0",
     "axios": "^1.4.0",
     "classnames": "^2.3.2",
     "react": "^18.2.0",
@@ -29,14 +31,18 @@
     "redux-thunk": "^2.4.2",
     "slick-carousel": "^1.8.1",
     "swiper": "^9.3.2",
+    "vite": "^4.4.11",
+    "vite-plugin-svgr": "^4.1.0",
+    "vite-tsconfig-paths": "^4.2.1",
     "web-vitals": "^2.1.0"
   },
   "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
+    "start": "vite",
+    "build": "tsc && vite build",
+    "serve": "vite preview",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "predeploy": "npm run build",
+    "predeploy": "vite build",
     "deploy": "gh-pages -d build"
   },
   "eslintConfig": {
