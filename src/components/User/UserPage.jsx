@@ -1,46 +1,107 @@
-import React, { useContext } from "react";
+import React, { useContext, useEffect, useRef, useState } from "react";
 import { Routes } from "react-router";
 import { Link } from "react-router-dom";
 import Input from "../../reusable/Input";
 import Button from "../../reusable/Button";
 import { UserContext } from "../../context/useInfoUser";
-import '../User/userProfile.css';
+import "../User/userProfile.css";
 
 const UserPage = () => {
-  const {userInfo} = useContext(UserContext);
+  const { userInfo } = useContext(UserContext);
+  const photoUpload = useRef(null);
+  const [changeProfile, setChangeProfile] = useState();
+  const [photo, setPhoto] = useState(null);
+  const [previewPic, setPreviewPic] = useState(null);
+  
+  useEffect(()=>{
+    if(photo){
+      console.log(photo)
+      const reader = new FileReader();
+      reader.onloadend = () => {
+       
+        setPreviewPic(reader.result)
+      }
+      reader.readAsDataURL(photo);
+    }
+  },[photo])
+console.log(typeof previewPic)
+  const picsUpload = e =>{
+    e.preventDefault();
+    
+    const file = e.target.files[0];
+    setPhoto(file);
+    
+    
+   
+    console.log(file)
+    console.log(photo)
+  }
+
+  const handleUploadPics = (event)=>{
+    console.log(event)
+      picsUpload(event)
+    
+      
+  }
+  
   return (
     <div className="mx-10">
-     <h1 className="text-center">Personal Details</h1>
-     <form className="grid lg:grid-cols-2 gap-3 grid-cols-1">
-       <div>
-          <label className="custom-file-upload fas">
-          <div className="img-wrap img-upload">
-          <img className="" src="https://cdn-icons-png.flaticon.com/512/3177/3177440.png" alt="photoUpload"/> 
-          </div>
-          <input id="photo-upload" type="file" alt="profile" />
-          </label>
+      <h1 className="text-center">Personal Details</h1>
+      <form >
+        <div className="flex justify-center">
+        <label className="custom-file-upload fas  bg-black">
+            {previewPic?<div className="img-wrap img-upload justify-center flex w-full">
+              
+              <img
+                className=""
+                src={previewPic}
+                alt="photoUpload"
+               
+               
+              />
 
-          <br></br>
-          <label>USERNAME</label>
-          <Input value={userInfo.username}/>
+            </div>: <div className="img-wrap img-upload justify-center flex w-full">
+              
+              <img
+                className=""
+                src="https://cdn-icons-png.flaticon.com/512/3177/3177440.png" 
+                alt="photoUpload"
+               
+               
+              />
+
+            </div>}
+            <input  onChange={handleUploadPics} ref={photoUpload} type="file" alt="profile" />
+            
+          </label>
+           </div>
+           
+        <div className="grid lg:grid-cols-2 gap-3 grid-cols-1 text-sm">
+          
+         <div>
+         <label>USERNAME</label>
+          <Input value={userInfo.username} />
           <label>EMAIL</label>
-          <Input value={userInfo.email}/>
-          
-       </div>
-       <div>
-          
+          <Input value={userInfo.email} />
           <label>PHONE</label>
-          <Input value={userInfo.phone_number}/>
+          <Input value={userInfo.phone_number} />
+         </div>
+         <div>
+          
+          
           <label>CHOOSE COUNTRY</label>
-          <Input/>
+          <Input />
           <label>ADDRESS</label>
           <Input />
-       </div>
-       <div className="flex justify-center">
-       <Button className="">Save Changes</Button>
-       </div>
-      
-     </form>
+          <div className="flex justify-center">
+          <Button className="">Save Changes</Button>
+        </div>
+          
+        </div>
+        
+        </div>
+        
+      </form>
     </div>
   );
 };

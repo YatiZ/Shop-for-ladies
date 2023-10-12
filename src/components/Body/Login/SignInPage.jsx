@@ -21,19 +21,22 @@ const SignInPage = () => {
     
     navigate('/');
     // try {
-    //   const response = await axios.get(
-    //     "http://127.0.0.1:8000/accounts/",
+    //   const response = await axios.post(
+    //     "http://127.0.0.1:8000/login/",
     //     values
     //   );
-    //   // .then((response)=> console.log(response.data));
-    //   const filteredData = response.data.filter((data) => {
-    //     return data.password === values.password && data.email === values.email;
-    //   });
-    //   if (filteredData.length > 0) {
-    //     window.location.href = "/";
-    //   } else {
-    //     console.log("No matching data found");
-    //   }
+    //   console.log(response.data)
+      // .then((response)=> console.log(response.data));
+      // const filteredData = response.data.filter((data) => {
+      //   return data.password === values.password && data.username === values.username;
+      // });
+      // setUserInfo(filteredData)
+      // console.log(userInfo)
+      // if (filteredData.length > 0) {
+      //   window.location.href = "/";
+      // } else {
+      //   console.log("No matching data found");
+      // }
     // } catch (error) {
     //   console.log(error);
     // }
@@ -59,9 +62,9 @@ const SignInPage = () => {
           <div className="flex flex-col w-full justify-center gap-y-8 tracking-wider">
             <h1>Login Form</h1>
             <Input
-              placeholder="Your Email"
+              placeholder="Your username"
               className=""
-              name="email"
+              name="username"
               onChange={handleChange}
               value={values.name}
             />

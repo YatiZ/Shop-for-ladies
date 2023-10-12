@@ -11,3 +11,8 @@ class UserMessageSerializer(serializers.ModelSerializer):
     class Meta:
         model = UserMessage
         fields = '__all__'
+
+class LoginUserSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = UserAccount
+        fields = ["username", "password"]
