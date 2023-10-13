@@ -54,7 +54,7 @@ console.log(typeof previewPic)
             {previewPic?<div className="img-wrap img-upload justify-center flex w-full">
               
               <img
-                className=""
+                className="w-28 h-28 object-contain"
                 src={previewPic}
                 alt="photoUpload"
                
@@ -64,7 +64,7 @@ console.log(typeof previewPic)
             </div>: <div className="img-wrap img-upload justify-center flex w-full">
               
               <img
-                className=""
+                className="w-28 h-28"
                 src="https://cdn-icons-png.flaticon.com/512/3177/3177440.png" 
                 alt="photoUpload"
                
