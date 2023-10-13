@@ -1,6 +1,5 @@
 import { useContext, useState } from "react";
 import { BiHeartCircle, BiLogInCircle } from "react-icons/bi";
-import Input from "../../../reusable/Input";
 import { Link } from "react-router-dom";
 import NavDrops from "./NavDrops";
 import { ShoppingBag } from "@mui/icons-material";

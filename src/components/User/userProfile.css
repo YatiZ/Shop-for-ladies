@@ -8,18 +8,19 @@ input[type="file"] {
     position: relative;
     padding: 6px;
     cursor: pointer;
-    background: linear-gradient(270deg, #3fa1a9, #79f1a4);
+    background: linear-gradient(270deg, #eda4dd, #f1ef79);
     margin-bottom: 25px;
+    
   }
   
   .img-wrap{
     position: relative;
-    width: 100px;
-    height: 100px;
+    /* width: fit-content;
+    height: 100px; */
     overflow: hidden;
     border-radius: 50%;
   }
-  .img-upload:before{
+  /* .img-upload:before{
     content: "\f093";
     font-size: 90px;
     position: absolute;
@@ -35,13 +36,14 @@ input[type="file"] {
     opacity: 0;
     transition: .5s ease;
     background-color: #fff;
-  }
-  .img-upload:hover:before{
+  } */
+  /* .img-upload:hover:before{
    opacity: 1;
-  }
+  } */
   img {
-    width: auto;
-    height: 100%;
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
   }
   
   label{

@@ -5,6 +5,7 @@ import Input from "../../reusable/Input";
 import Button from "../../reusable/Button";
 import { UserContext } from "../../context/useInfoUser";
 import "../User/userProfile.css";
+import UserAddress from "./UserAddress";
 
 const UserPage = () => {
   const { userInfo } = useContext(UserContext);
@@ -46,7 +47,7 @@ console.log(typeof previewPic)
   
   return (
     <div className="mx-10">
-      <h1 className="text-center">Personal Details</h1>
+      <h1 className="text-center mt-4 font-Serif text-2xl mb-4">Personal Details</h1>
       <form >
         <div className="flex justify-center">
         <label className="custom-file-upload fas  bg-black">
@@ -90,11 +91,12 @@ console.log(typeof previewPic)
           
           
           <label>CHOOSE COUNTRY</label>
-          <Input />
+          {/* <Input /> */}
+          <UserAddress/>
           <label>ADDRESS</label>
           <Input />
           <div className="flex justify-center">
-          <Button className="">Save Changes</Button>
+          <Button className="mt-5 rounded-md bg-yellow-200">Save Changes</Button>
         </div>
           
         </div>
