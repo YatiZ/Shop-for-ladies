@@ -12,4 +12,7 @@ body{
   margin: 0;
   scrollbar-width: none;
   overflow-x: hidden;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
 }
