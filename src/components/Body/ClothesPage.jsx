@@ -19,7 +19,7 @@ function ClothesPage() {
     </div>
   ));
   return (
-    <div>
+    <div className="mt-10 font-Serif text-center ">
       <div>{clothData}</div>
     </div>
   );

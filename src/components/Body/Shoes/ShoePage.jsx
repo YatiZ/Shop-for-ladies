@@ -20,7 +20,7 @@ const ShoePage = () => {
 
   return (
 
-    <div className='mt-2'>
+    <div className='mt-4'>
       <div>
         <ShoeSliderPage/>
       </div>

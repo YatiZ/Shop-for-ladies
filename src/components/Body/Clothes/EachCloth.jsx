@@ -40,7 +40,7 @@ function EachCloth({ cloth }) {
     const quantityInCart = productInCart? productInCart.qty : 0;
     
     return(
-      <Panel key={d.id} className="text-center w-fit h-full p-5 mx-3">
+      <Panel key={d.id} className="text-center w-fit h-full p-5 mx-3 ">
     <div className="overflow-hidden relative">
         <div>
        <img
