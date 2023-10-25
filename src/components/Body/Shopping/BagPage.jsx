@@ -10,7 +10,7 @@ const ShoppingBagPage = () => {
   
   
   return (
-    <div className="mb-5">
+    <div className="mb-5 mt-5">
       <h1 className="flex justify-center mt-5">My Shopping Bag</h1>
       {cart.length ? (
         <div className="flex flex-col md:flex-row justify-center md:mr-5">
