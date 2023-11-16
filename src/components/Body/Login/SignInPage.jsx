@@ -42,7 +42,7 @@ const SignInPage = () => {
     // }
   };
   return (
-    <div className="my-20 block">
+    <div className="my-20 block mt-28 ">
       <div className="flex justify-center"></div>
       <div className="">
         <Square className="top-32 right-24 w-20 h-20 z-10" />

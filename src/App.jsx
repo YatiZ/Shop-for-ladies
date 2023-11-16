@@ -20,6 +20,7 @@ import ContactAdmin from "./components/Body/Help/contactAdmin";
 import ReviewPage from "./components/Body/Review/ReviewPage";
 import FavoritePage from "./components/Body/FavoritePage";
 import UserPage from "./components/User/UserPage";
+import MatchingPage from "./components/Body/Matching/matchingPage";
 
 
 function App() {
@@ -27,6 +28,7 @@ function App() {
     <div className="min-h-screen flex flex-col">
       <Header />
       <Routes>
+        <Route path="/matching" element={<MatchingPage/>}></Route>
       <Route path="/favorite-collections" element={<FavoritePage/>}></Route>
       <Route path="/testing" element={<Testing />}></Route>
       <Route path="/account" element={<UserPage/>}></Route>

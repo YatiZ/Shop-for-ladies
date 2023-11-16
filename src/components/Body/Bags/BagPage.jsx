@@ -22,7 +22,7 @@ function BagPage() {
     </div>
   ));
   return (
-    <div className="mt-8">
+    <div className="mt-20">
       {bagData}
     </div>
   );

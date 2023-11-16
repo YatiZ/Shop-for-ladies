@@ -17,10 +17,7 @@ const UserRegister = () => {
   const handleSubmit = async (event) => {
     event.preventDefault();
 
-    // setFormSubmit(true);
-    // if(!values.username){
-    //   console.log("Username is required!")
-    // }
+
     
     try {
       await axios
@@ -37,7 +34,7 @@ const UserRegister = () => {
     }
   };
   return (
-    <div className="flex justify-center md:px-24 px-8 md:m-10 mt-10 text-xs md:text-base tracking-wider">
+    <div className="flex justify-center md:px-24 px-8 md:m-10 text-xs md:text-base tracking-wider">
       <Form className="w-screen  gap-y-4 flex-col flex" onSubmit={handleSubmit}>
         <h1 className="mt-10 flex justify-center font-bold text-3xl">
           Registration Form

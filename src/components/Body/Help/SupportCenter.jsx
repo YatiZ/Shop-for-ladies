@@ -14,7 +14,7 @@ const SupportCenter = () => {
     setDropDown(updateDrop);
   };
   return (
-    <div className="mt-9 container mx-auto lg:px-10 md:px-3">
+    <div className="mt-24 container mx-auto lg:px-10 md:px-3">
       <div className="grid grid-cols-2 lg:mx-52">
         <label className=" text-4xl font-Serif font-bold">
           Help Center

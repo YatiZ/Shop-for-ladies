@@ -43,14 +43,12 @@ const SignInPage = () => {
     return (
       <div>
         <h1>Thank you for submitting the form!</h1>
-        {/* Add your desired content for the new page */}
+    
       </div>
     );
   }
 
-return(
-    
-)
+
 };
 
 export default SignInPage;

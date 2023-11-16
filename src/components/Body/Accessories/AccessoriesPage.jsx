@@ -20,7 +20,7 @@ function AccessoriesPage() {
       <EachItem thing={d} />
     </div>
   ));
-  return <div>{accessories}</div>;
+  return <div className="mt-20">{accessories}</div>;
 }
 
 export default AccessoriesPage;

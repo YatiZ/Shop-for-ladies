@@ -9,6 +9,11 @@ function Content(){
                 <h1 className="md:text-7xl text-5xl font-bold mx-2 md:ml-20 concept">Let's wear the best</h1>
                 <div className="mt-12">
                     <Link to='/clothes'className=" px-3 md:ml-40 py-1.5  text-lg animate-bounce border border-dashed border-red-600 hover:bg-pink-400 hover:text-white">Shopping Now</Link>
+                    
+                </div>
+                <div className="mt-12">
+                    <Link to='/matching'className=" px-3 md:ml-40 py-1.5  text-lg animate-bounce border border-dashed border-red-600 hover:bg-pink-400 hover:text-white">Match the fashion clothes</Link>
+                    
                 </div>
                 
             </div>
