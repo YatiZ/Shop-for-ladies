@@ -2,6 +2,7 @@ import { useContext, useState } from "react";
 import EachCloth from "./Clothes/EachCloth";
 import { clothes } from "./Clothes/clothData";
 import { useLocation } from "react-router-dom";
+import SearchItem from "../header/drops/SearchItem";
 
 function ClothesPage() {
   const { search } = useLocation();
@@ -19,7 +20,11 @@ function ClothesPage() {
     </div>
   ));
   return (
-    <div className="mt-10 font-Serif text-center ">
+    <div className=" font-Serif text-center ">
+  
+      
+      <SearchItem/>
+
       <div>{clothData}</div>
     </div>
   );

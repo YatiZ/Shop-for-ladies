@@ -21,6 +21,7 @@ import ReviewPage from "./components/Body/Review/ReviewPage";
 import FavoritePage from "./components/Body/FavoritePage";
 import UserPage from "./components/User/UserPage";
 import MatchingPage from "./components/Body/Matching/matchingPage";
+import LogoutPage from "./components/Body/Login/LogoutPage";
 
 
 function App() {
@@ -47,6 +48,7 @@ function App() {
         
 
         <Route path="/login" element={<SignInPage />} />
+        <Route path="/logout" element={<LogoutPage/>}/>
         <Route path="/shopping-bag" element={<ShoppingBagPage />} />
        
         <Route path="/sign-up" element={<UserRegister />} />

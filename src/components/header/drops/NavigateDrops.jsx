@@ -58,9 +58,7 @@ function NavigateDrops({ navigateData }) {
       onMouseLeave={handleMouseLeave}
     >
       {renderedData}
-      <div className="md:py-2 py-0 w-fit">
-        <SearchItem />
-      </div>
+
 
        <div className="py-4">
         {userInfo? <div onMouseEnter={handleUserDrops} ><AccountCircleIcon className="text-2xl hover:text-pink-400"/>

@@ -5,7 +5,7 @@ export const drops = [
     {label:"User Info",route:"/account"},
     {label:"Change Password",route:"<UserAccount/>"},
     {label:"Cart History",route:"<UserAccount/>"},
-    {label:"Logout",route:"Logout"},
+    {label:"Logout",route:"/logout"},
 ]
 
 

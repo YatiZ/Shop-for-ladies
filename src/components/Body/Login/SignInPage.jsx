@@ -1,9 +1,9 @@
-import React, { useContext } from "react";
+import React, { useContext, useState } from "react";
 import Form from "../../../reusable/Form";
 import Square from "../../../reusable/Square";
 import Input from "../../../reusable/Input";
 import Button from "../../../reusable/Button";
-import { Link, useRoutes, useNavigate } from "react-router-dom";
+import { Link, useRoutes, useNavigate} from "react-router-dom";
 import axios from "axios";
 import useForm from "../../../hooks/useForm";
 import { UserContext } from "../../../context/useInfoUser";
@@ -12,11 +12,14 @@ const SignInPage = () => {
   const initialValue = {};
   const [values, handleChange] = useForm(initialValue);
   const {userInfo, setUserInfo} = useContext(UserContext);
+  const [isLoading,setIsLoading] = useState(false);
 
   const navigate = useNavigate();
   const handleSubmit = async (event) => {
     
     event.preventDefault();
+    setIsLoading(true);
+    console.log('Loading',isLoading)
     setUserInfo(values)
     
     navigate('/');
@@ -61,6 +64,7 @@ const SignInPage = () => {
         >
           <div className="flex flex-col w-full justify-center gap-y-8 tracking-wider">
             <h1>Login Form</h1>
+      
             <Input
               placeholder="Your username"
               className=""
@@ -77,6 +81,7 @@ const SignInPage = () => {
             <Button className="flex justify-center rounded-md backdrop-opacity-10 backdrop-blur bg-pink-400 border-none hover:bg-yellow-200">
               Login
             </Button>
+            {isLoading && <p>Loading...</p>}
             <div>
               <p>
                 Forgot Password ?
