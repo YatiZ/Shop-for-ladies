@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import "./App.css";
+// import "./App.css";
 import ClothesPage from "./components/Body/ClothesPage";
 import Header from "./components/header/Header";
 import { Routes, Route } from "react-router-dom";
@@ -22,17 +22,43 @@ import FavoritePage from "./components/Body/FavoritePage";
 import UserPage from "./components/User/UserPage";
 import MatchingPage from "./components/Body/Matching/matchingPage";
 import LogoutPage from "./components/Body/Login/LogoutPage";
+import { GoogleLogin } from "@react-oauth/google";
+import { jwtDecode } from "jwt-decode";
+import GoogleOAuthButton from "./Google";
+import { googleLogout } from "@react-oauth/google";
+import { useState } from "react";
+import VerifyEmail from "./components/Body/Login/VerifyEmail";
+import ForgetPassword from "./components/Body/Login/ForgetPassword";
+import { ToastContainer } from "react-toastify";
 
+googleLogout();
 
 function App() {
+  // const [isLogin, setIsLogin] = useState('')
   return (
-    <div className="min-h-screen flex flex-col">
+    <>
       <Header />
+      {/* <GoogleLogin
+        onSuccess={credentialResponse => {
+          console.log('credentialResponse',credentialResponse)
+          const decoded = jwtDecode(credentialResponse.credential);
+          setIsLogin(decoded)
+          console.log(decoded);
+        }}
+        onError={() => {
+          console.log('Login Failed');
+        }}
+   
+      />
+
+      <p>{isLogin.name}</p> */}
+      <ToastContainer />
+
       <Routes>
-        <Route path="/matching" element={<MatchingPage/>}></Route>
-      <Route path="/favorite-collections" element={<FavoritePage/>}></Route>
-      <Route path="/testing" element={<Testing />}></Route>
-      <Route path="/account" element={<UserPage/>}></Route>
+        <Route path="/matching" element={<MatchingPage />}></Route>
+        <Route path="/favorite-collections" element={<FavoritePage />}></Route>
+        <Route path="/testing" element={<Testing />}></Route>
+        <Route path="/account" element={<UserPage />}></Route>
         <Route path="/" element={<BodyPage />}></Route>
 
         <Route path="/clothes" element={<ClothesPage />}></Route>
@@ -43,19 +69,23 @@ function App() {
         <Route path="/sales" element={<DiscountPage />}></Route>
 
         <Route path="/help-center" element={<SupportCenter />}></Route>
-        <Route path="/help-center/contact-us" element={<ContactAdmin/>}></Route>
-        <Route path="/help-center/reviews" element={<ReviewPage/>}></Route>
-        
+        <Route
+          path="/help-center/contact-us"
+          element={<ContactAdmin />}
+        ></Route>
+        <Route path="/help-center/reviews" element={<ReviewPage />}></Route>
 
         <Route path="/login" element={<SignInPage />} />
-        <Route path="/logout" element={<LogoutPage/>}/>
+        <Route path="/logout" element={<LogoutPage />} />
         <Route path="/shopping-bag" element={<ShoppingBagPage />} />
-       
+
         <Route path="/sign-up" element={<UserRegister />} />
+        <Route path="/otp/verify" element={<VerifyEmail />} />
+        <Route path="/forget-password" element={<ForgetPassword />} />
         <Route path="*" element={<NotFound />} />
       </Routes>
       <FooterPage />
-    </div>
+    </>
   );
 }
 

@@ -7,11 +7,15 @@ import { ShopProvider } from "./context/useShopContext";
 import { SearchProvider } from "./context/useGlobalSearch";
 import { UserProvider } from "./context/useInfoUser";
 import { FavoriteProvider } from "./context/useFavorite";
+import { GoogleOAuthProvider } from "@react-oauth/google";
 
 const el = document.getElementById("root");
 const root = ReactDOM.createRoot(el);
 
 root.render(
+  <GoogleOAuthProvider clientId='507507731926-pignmv18a21e7b9s1gr7q4gek8heujmm.apps.googleusercontent.com'>
+  
+ 
   <BrowserRouter>
     <ShopProvider>
       <SearchProvider>
@@ -23,4 +27,5 @@ root.render(
       </SearchProvider>
     </ShopProvider>
   </BrowserRouter>
+  </GoogleOAuthProvider>
 );

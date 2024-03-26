@@ -59,13 +59,15 @@ function NavigateDrops({ navigateData }) {
     >
       {renderedData}
 
+       <div className="flex gap-6 items-center justify-around">
 
+       
        <div className="py-4">
-        {userInfo? <div onMouseEnter={handleUserDrops} ><AccountCircleIcon className="text-2xl hover:text-pink-400"/>
+        {userInfo? <div onMouseEnter={handleUserDrops} ><AccountCircleIcon className="text-3xl hover:text-pink-400"/>
         
         </div>: 
         <Link to="/login">
-          <BiLogInCircle className="text-2xl " />
+          <BiLogInCircle className="text-3xl " />
         </Link>}
         {userDrops && <div className=" bg-yellow-400">
            <UserDrops handleUserCloseDrops={handleUserCloseDrops}/>
@@ -74,12 +76,12 @@ function NavigateDrops({ navigateData }) {
 
       <div>
         <Link to="/favorite-collections">
-          <BiHeartCircle className="text-2xl mb-3 lg:my-1" />
+          <BiHeartCircle className="text-3xl mb-0 md:mb-3 lg:my-1" />
         </Link>
       </div>
       <Badge
         badgeContent={totalQty}
-        className=" outline-pink-500 outline rounded-full"
+        className=" outline-pink-500 outline rounded-full h-fit"
         color="primary"
       >
         <Link to="/shopping-bag">
@@ -88,6 +90,7 @@ function NavigateDrops({ navigateData }) {
           </div>
         </Link>
       </Badge>
+      </div>
     </div>
   );
 }

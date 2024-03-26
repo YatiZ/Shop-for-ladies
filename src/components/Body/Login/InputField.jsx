@@ -1,27 +1,21 @@
 export const FIELDS = [
   {
-    label: "Username",
+    label: "First Name",
     type: "text",
-    placeholder: "Enter your name",
-    name: "username",
+    placeholder: "Enter your first name",
+    name: "first_name",
+  },
+  {
+    label: "Last Name",
+    type: "text",
+    placeholder: "Enter your last name",
+    name: "last_name",
   },
   {
     label: "Email Address",
     type: "email",
     placeholder: "youremail@email.com",
     name: "email",
-  },
-  {
-    label: "Phone Number",
-    type: "text",
-    placeholder: "XXX XXX XXX",
-    name: "phonenumber",
-  },
-  {
-    label: "Birth Date",
-    type: "date",
-    placeholder: "birth",
-    name: "birth_date",
   },
   {
     label: "Password",

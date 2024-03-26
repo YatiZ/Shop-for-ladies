@@ -3,50 +3,66 @@ import Form from "../../../reusable/Form";
 import Square from "../../../reusable/Square";
 import Input from "../../../reusable/Input";
 import Button from "../../../reusable/Button";
-import { Link, useRoutes, useNavigate} from "react-router-dom";
+import { Link, useRoutes, useNavigate } from "react-router-dom";
 import axios from "axios";
 import useForm from "../../../hooks/useForm";
 import { UserContext } from "../../../context/useInfoUser";
+import { toast } from "react-toastify";
 
 const SignInPage = () => {
-  const initialValue = {};
-  const [values, handleChange] = useForm(initialValue);
-  const {userInfo, setUserInfo} = useContext(UserContext);
-  const [isLoading,setIsLoading] = useState(false);
+  // const { userInfo, setUserInfo } = useContext(UserContext);
+  const [loginData, setLoginData] = useState({
+    email: "",
+    password: "",
+  });
+  const [error, setError] = useState("");
+  const [isLoading, setIsLoading] = useState(false);
 
   const navigate = useNavigate();
-  const handleSubmit = async (event) => {
-    
-    event.preventDefault();
-    setIsLoading(true);
-    console.log('Loading',isLoading)
-    setUserInfo(values)
-    
-    navigate('/');
-    // try {
-    //   const response = await axios.post(
-    //     "http://127.0.0.1:8000/login/",
-    //     values
-    //   );
-    //   console.log(response.data)
-      // .then((response)=> console.log(response.data));
-      // const filteredData = response.data.filter((data) => {
-      //   return data.password === values.password && data.username === values.username;
-      // });
-      // setUserInfo(filteredData)
-      // console.log(userInfo)
-      // if (filteredData.length > 0) {
-      //   window.location.href = "/";
-      // } else {
-      //   console.log("No matching data found");
-      // }
-    // } catch (error) {
-    //   console.log(error);
-    // }
+
+  const handleChange = (e) => {
+    setLoginData({ ...loginData, [e.target.name]: e.target.value });
+    // setLoginData(...loginData, e.target.value);
   };
+  const handleSubmit = async (event) => {
+    event.preventDefault();
+    const { email, password } = loginData;
+    if (!email || !password) {
+      setError("All fields are required!");
+    } else {
+      setIsLoading(true);
+      try {
+        const res = await axios.post(
+          "http://localhost:8000/api/v1/auth/login/",
+          loginData
+        );
+        const response = res.data;
+        console.log(res);
+        setIsLoading(false);
+
+        toast.success("Login successful", {
+          position: "bottom-right",
+          autoClose: 3000,
+        });
+        // if (response.status === 200) {
+        // navigate("/");
+        // }
+      } catch (error) {
+        setIsLoading(false);
+        if (error.response && error.response.status === 401) {
+          toast.error(error.response.data.detail);
+        } else {
+          console.error("An error occurred:", error);
+        }
+      }
+    }
+
+    // navigate("/");
+  };
+
   return (
     <div className="my-20 block mt-28 ">
-      <div className="flex justify-center"></div>
+      {/* <div className="flex justify-center"></div>
       <div className="">
         <Square className="top-32 right-24 w-20 h-20 z-10" />
         <Square className="top-52 left-24 w-32 h-32" />
@@ -55,7 +71,8 @@ const SignInPage = () => {
         <Square className="-bottom-5 left-32 w-16 h-16 z-10" />
         <Square className="top-24 left-96 w-24 h-24 z-10" />
         <Square className="-bottom-20 right-96 w-32 h-32" />
-      </div>
+      </div> */}
+      {error ? { error } : ""}
       <div className="flex justify-center">
         <Form
           className="w-fit p-10 md:w-2/3 flex justify-center"
@@ -64,19 +81,19 @@ const SignInPage = () => {
         >
           <div className="flex flex-col w-full justify-center gap-y-8 tracking-wider">
             <h1>Login Form</h1>
-      
+
             <Input
-              placeholder="Your username"
+              placeholder="Your email"
               className=""
-              name="username"
+              name="email"
               onChange={handleChange}
-              value={values.name}
+              value={loginData.email}
             />
             <Input
               placeholder="Password"
               name="password"
               onChange={handleChange}
-              value={values.name}
+              value={loginData.password}
             />
             <Button className="flex justify-center rounded-md backdrop-opacity-10 backdrop-blur bg-pink-400 border-none hover:bg-yellow-200">
               Login
@@ -84,8 +101,8 @@ const SignInPage = () => {
             {isLoading && <p>Loading...</p>}
             <div>
               <p>
-                Forgot Password ?
-                <Link to="/forgot-pw" className="underline">
+                Forgot Password?{" "}
+                <Link to="/forget-password" className="underline">
                   Click Here
                 </Link>
               </p>
