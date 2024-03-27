@@ -24,7 +24,6 @@ import MatchingPage from "./components/Body/Matching/matchingPage";
 import LogoutPage from "./components/Body/Login/LogoutPage";
 import { GoogleLogin } from "@react-oauth/google";
 import { jwtDecode } from "jwt-decode";
-import GoogleOAuthButton from "./Google";
 import { googleLogout } from "@react-oauth/google";
 import { useState } from "react";
 import VerifyEmail from "./components/Body/Login/VerifyEmail";
@@ -76,12 +75,13 @@ function App() {
         <Route path="/help-center/reviews" element={<ReviewPage />}></Route>
 
         <Route path="/login" element={<SignInPage />} />
-        <Route path="/logout" element={<LogoutPage />} />
+        {/* <Route path="/logout" element={<LogoutPage />} /> */}
         <Route path="/shopping-bag" element={<ShoppingBagPage />} />
 
         <Route path="/sign-up" element={<UserRegister />} />
         <Route path="/otp/verify" element={<VerifyEmail />} />
         <Route path="/forget-password" element={<ForgetPassword />} />
+        <Route path="/profile" element={<UserPage/>}/>
         <Route path="*" element={<NotFound />} />
       </Routes>
       <FooterPage />

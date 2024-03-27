@@ -37,15 +37,26 @@ const SignInPage = () => {
           loginData
         );
         const response = res.data;
+        const user ={
+          "email":response.email,
+          "names":response.full_name
+        }
         console.log(res);
+        console.log("User: ",user)
         setIsLoading(false);
 
+        
+        // if (response.status === 200) {
+        const storedUserInfo = localStorage.setItem("user",JSON.stringify(user))
+        console.log('Stored user info',storedUserInfo)
+        localStorage.setItem("access",JSON.stringify(response.access_token))
+        localStorage.setItem("refresh",JSON.stringify(response.refresh_token))
+    
+        navigate("/profile");
         toast.success("Login successful", {
           position: "bottom-right",
           autoClose: 3000,
         });
-        // if (response.status === 200) {
-        // navigate("/");
         // }
       } catch (error) {
         setIsLoading(false);
@@ -88,12 +99,14 @@ const SignInPage = () => {
               name="email"
               onChange={handleChange}
               value={loginData.email}
+              required
             />
             <Input
               placeholder="Password"
               name="password"
               onChange={handleChange}
               value={loginData.password}
+              required
             />
             <Button className="flex justify-center rounded-md backdrop-opacity-10 backdrop-blur bg-pink-400 border-none hover:bg-yellow-200">
               Login

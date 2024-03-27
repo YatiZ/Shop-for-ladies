@@ -17,7 +17,7 @@ const UserAddress = () => {
   return (
     <Select options={countries}
     value={selectedCountry}
-    onChange={(selectedOption) => setSelectedCountry(selectedOption)}/>
+    onChange={(selectedOption) => setSelectedCountry(selectedOption)} />
   )
 }
 

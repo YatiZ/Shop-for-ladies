@@ -24,6 +24,8 @@ function EachCloth({ cloth }) {
   };
 
   const isFavorite = (d) => favorites.includes(d);
+  
+  // const isFavorite = (itemId)=> favorites.some((favItem)=> favItem.id === itemId)
 
   const toggleFavorite = (itemId) => {
     if (isFavorite(itemId)) {

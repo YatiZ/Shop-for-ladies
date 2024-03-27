@@ -4,9 +4,13 @@ import React, { createContext, useEffect, useState } from 'react';
 const UserContext = createContext();
 
 const UserProvider = ({children}) => {
-  const [userInfo, setUserInfo] = useState(null);
-  
+  const [userInfo, setUserInfo] = useState(()=>{
+    const user = JSON.parse(localStorage.getItem('user'))
+    return user;
+  });
 
+
+  console.log(userInfo)
 
 
   return (

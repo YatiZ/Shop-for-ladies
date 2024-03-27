@@ -9,6 +9,7 @@ const FavoritePage = () => {
   const {userInfo} = useContext(UserContext);
   console.log(userInfo)
   const {favorites} = useContext(FavoriteContext);
+  console.log(favorites)
   const [showDetail, setShowDetail] = useState({});
   const router = useNavigate()
 

@@ -13,44 +13,50 @@ const UserPage = () => {
   const [changeProfile, setChangeProfile] = useState();
   const [photo, setPhoto] = useState(null);
   const [previewPic, setPreviewPic] = useState(null);
-  
-  useEffect(()=>{
-    if(photo){
-      console.log(photo)
+  const user = JSON.parse(localStorage.getItem("user"));
+  console.log("User from profile: ", user);
+
+  useEffect(() => {
+    if (photo) {
+      console.log(photo);
       const reader = new FileReader();
       reader.onloadend = () => {
-       
-        setPreviewPic(reader.result)
-      }
+        setPreviewPic(reader.result);
+      };
       reader.readAsDataURL(photo);
     }
-  },[photo])
-console.log(typeof previewPic)
-  const picsUpload = e =>{
+  }, [photo]);
+  console.log(typeof previewPic);
+  const picsUpload = (e) => {
     e.preventDefault();
-    
+
     const file = e.target.files[0];
     setPhoto(file);
-    
-    
-   
-    console.log(file)
-    console.log(photo)
-  }
 
-  const handleUploadPics = (event)=>{
-    console.log(event)
-      picsUpload(event)
-    
-      
-  }
-  
+    console.log(file);
+    console.log(photo);
+  };
+
+  const handleUploadPics = (event) => {
+    console.log("hello weorld");
+    console.log(event);
+    picsUpload(event);
+  };
+
+  // for logout fun
+  const handleClick = () => {
+    console.log("logout");
+  };
+
   return (
-    <div className="mx-10">
-      <h1 className="text-center mt-4 font-Serif text-2xl mb-4">Personal Details</h1>
-      <form >
+    <div className="mx-10 font-Serif">
+      <h1 className="text-center mt-4 font-Serif text-2xl mb-4">
+        Personal Details
+      </h1>
+
+      <form>
         <div className="flex justify-center">
-        <label className="custom-file-upload fas  bg-black">
+          {/* <label className="custom-file-upload fas bg-black">
             {previewPic?<div className="img-wrap img-upload justify-center flex w-full">
               
               <img
@@ -74,36 +80,40 @@ console.log(typeof previewPic)
             </div>}
             <input  onChange={handleUploadPics} ref={photoUpload} type="file" alt="profile" />
             
-          </label>
-           </div>
-           
+        </label> */}
+        </div>
+
         <div className="grid lg:grid-cols-2 gap-3 grid-cols-1 text-sm">
-          
-         <div>
-         <label>USERNAME</label>
-          <Input value={userInfo.username} />
-          <label>EMAIL</label>
-          <Input value={userInfo.email} />
-          <label>PHONE</label>
-          <Input value={userInfo.phone_number} />
-         </div>
-         <div>
-          
-          
-          <label>CHOOSE COUNTRY</label>
-          {/* <Input /> */}
-          <UserAddress/>
-          <label>ADDRESS</label>
-          <Input />
-          <div className="flex justify-center">
-          <Button className="mt-5 rounded-md bg-yellow-200">Save Changes</Button>
+          <div>
+            <label>USERNAME</label>
+            <Input value={userInfo.names} />
+            <label>EMAIL</label>
+            <Input value={userInfo.email} />
+            <label>PHONE</label>
+            <Input value={userInfo.phone_number} />
+          </div>
+
+          <div>
+            <label>CHOOSE COUNTRY</label>
+            {/* <Input /> */}
+            <UserAddress className="backdrop-opacity-10 bg-white/40 backdrop-blur rounded-lg focus:outline-pink-500" />
+            <label>ADDRESS</label>
+            <textarea className="py-8 backdrop-opacity-10 bg-white/40 backdrop-blur rounded-lg focus:outline-pink-500 w-full md:py-8 lg:py-6 tracking-wider shadow-md" />
+          </div>
         </div>
-          
+
+        <div className="flex justify-end">
+          <Button className="mt-5 rounded-md bg-yellow-200">
+            Save Changes
+          </Button>
         </div>
-        
-        </div>
-        
       </form>
+
+      <div className="flex justify-end mt-3">
+        <Button onClick={handleClick} className="rounded-md bg-red-500 mx-5">
+          Logout
+        </Button>
+      </div>
     </div>
   );
 };

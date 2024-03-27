@@ -24,6 +24,7 @@ const EachItem = ({ thing }) => {
       removeFav(d)
     }else{
       addToFav(d)
+      console.log(d)
     }
   }
 
