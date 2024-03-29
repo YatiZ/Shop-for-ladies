@@ -9,12 +9,26 @@ import { ShopContext } from "../../../context/useShopContext";
 import { SearchContext } from "../../../context/useGlobalSearch";
 import { FavoriteContext } from "../../../context/useFavorite";
 import { AiOutlineHeart } from "react-icons/ai";
+import img1 from "../Clothes/images/white-blazer.jpg";
 
 function EachCloth({ cloth }) {
   const { globalSearch } = useContext(SearchContext);
   const { cart, handleClick } = useContext(ShopContext);
   const { favorites, addToFav, removeFav } = useContext(FavoriteContext);
   const [openInfo, setOpenInfo] = useState(false);
+
+  //for picked color fun
+  const [pickedColor, setPickedColor] = useState("bg-blue-500");
+  const handleSelectedColor = (color) => {
+    setPickedColor(color);
+  };
+  console.log(pickedColor);
+
+  // const colorImgMap = {
+  //   "bg-blue-500":"img1"
+  // };
+
+  // const imageUrl = colorImgMap[pickedColor]
 
   const OpenMoreInfo = () => {
     setOpenInfo(true);
@@ -24,7 +38,7 @@ function EachCloth({ cloth }) {
   };
 
   const isFavorite = (d) => favorites.includes(d);
-  
+
   // const isFavorite = (itemId)=> favorites.some((favItem)=> favItem.id === itemId)
 
   const toggleFavorite = (itemId) => {
@@ -52,9 +66,18 @@ function EachCloth({ cloth }) {
             <img
               src={d.img}
               alt={d.name}
-              className="w-full h-full object-contain"
+              className={`w-full h-full object-contain`}
               onClick={OpenMoreInfo}
             />
+            <div
+              className={`${pickedColor} w-14 h-14 m-10`}
+              // style={{
+              //   mixBlendMode: "multiply",
+
+              // }}
+            >
+              hello
+            </div>
           </div>
           <div className="absolute inset-0 translate-y-[85%] bg-pink-400 py-3 text-white">
             <AddShoppingCart
@@ -85,7 +108,30 @@ function EachCloth({ cloth }) {
               </button>
             </div>
             <div className="flex justify-start">
-              <ColorData colors={d.color} sizes={d.size} />
+              {/* <ColorData colors={d.color} sizes={d.size} /> */}
+              <div className="flex justify-start gap-x-10">
+                <div className="flex gap-x-1">
+                  {Array.isArray(d.color) &&
+                    d.color.map((selectedColor, index) => (
+                      <button
+                        key={index}
+                        className={`${selectedColor} w-6 h-6 rounded-full`}
+                        onClick={() => handleSelectedColor(selectedColor)}
+                      ></button>
+                    ))}
+                </div>
+                <div className="flex justify-center">
+                  {Array.isArray(d.size) &&
+                    d.size.map((s, index) => (
+                      <div
+                        key={index}
+                        className="border bg-slate-300 rounded-full px-2 mx-1"
+                      >
+                        {s}
+                      </div>
+                    ))}
+                </div>
+              </div>
             </div>
           </div>
         </div>
