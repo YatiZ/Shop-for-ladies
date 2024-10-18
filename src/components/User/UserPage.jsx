@@ -1,21 +1,25 @@
 import React, { useContext, useEffect, useRef, useState } from "react";
-import { Routes } from "react-router";
-import { Link } from "react-router-dom";
 import Input from "../../reusable/Input";
 import Button from "../../reusable/Button";
 import { UserContext } from "../../context/useInfoUser";
 import "../User/userProfile.css";
 import UserAddress from "./UserAddress";
+import axiosInstance from "../../utils/axiosinstance";
+import { useNavigate } from "react-router";
+import { toast } from "react-toastify";
+import axios from "axios";
 
 const UserPage = () => {
   const { userInfo } = useContext(UserContext);
+  const navigate = useNavigate();
   const photoUpload = useRef(null);
   const [changeProfile, setChangeProfile] = useState();
   const [photo, setPhoto] = useState(null);
   const [previewPic, setPreviewPic] = useState(null);
   const user = JSON.parse(localStorage.getItem("user"));
   console.log("User from profile: ", user);
-
+  // const removeUser = localStorage.removeItem("user")
+  // console.log(removeUser)
   useEffect(() => {
     if (photo) {
       console.log(photo);
@@ -44,14 +48,28 @@ const UserPage = () => {
   };
 
   // for logout fun
-  const handleClick = () => {
-    console.log("logout");
+  const refresh = JSON.parse(localStorage.getItem('refresh'))
+  
+  const handleLogout = async() => {
+     const res = await axiosInstance.post('/auth/logout/',{'refresh_token':refresh})
+     console.log('Res from logout',res)
+     if(res === 200){
+       localStorage.removeItem('access')
+       localStorage.removeItem('refresh')
+       localStorage.removeItem('user')
+       navigate('/login')
+       toast('Logout successful!')
+     }
   };
-
+  
+  // const handleLogout = ()=>{
+  //   localStorage.removeItem("user")
+  //   navigate("/login")
+  // }
   return (
     <div className="mx-10 font-Serif">
       <h1 className="text-center mt-4 font-Serif text-2xl mb-4">
-        Personal Details
+        {user && user.names}'s Personal Details
       </h1>
 
       <form>
@@ -110,7 +128,7 @@ const UserPage = () => {
       </form>
 
       <div className="flex justify-end mt-3">
-        <Button onClick={handleClick} className="rounded-md bg-red-500 mx-5">
+        <Button onClick={handleLogout} className="rounded-md bg-red-500 mx-5">
           Logout
         </Button>
       </div>

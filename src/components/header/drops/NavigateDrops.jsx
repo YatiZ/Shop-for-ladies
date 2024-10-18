@@ -14,6 +14,7 @@ function NavigateDrops({ navigateData }) {
   const [openDrops, setOpenDrops] = useState(false);
   const [userDrops, setUserDrops] = useState(false);
   const {userInfo} = useContext(UserContext);
+  console.log('UserTesting',userInfo)
 
   const { cart } = useContext(ShopContext);
 

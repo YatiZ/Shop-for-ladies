@@ -12,7 +12,7 @@ const UserProvider = ({children}) => {
 
   console.log(userInfo)
 
-
+  
   return (
     <UserContext.Provider value={{userInfo, setUserInfo}}>
         {children}

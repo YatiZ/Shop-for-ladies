@@ -60,7 +60,7 @@ function EachCloth({ cloth }) {
     const quantityInCart = productInCart ? productInCart.qty : 0;
 
     return (
-      <Panel key={d.id} className="text-center w-fit h-full p-5 mx-3 ">
+      <Panel key={d.id} className="text-center w-fit h-full p-5 mx-3">
         <div className="overflow-hidden relative">
           <div className="w-[250px]">
             <img
@@ -69,7 +69,7 @@ function EachCloth({ cloth }) {
               className={`w-full h-full object-contain`}
               onClick={OpenMoreInfo}
             />
-            <div
+            {/* <div
               className={`${pickedColor} w-14 h-14 m-10`}
               // style={{
               //   mixBlendMode: "multiply",
@@ -77,7 +77,7 @@ function EachCloth({ cloth }) {
               // }}
             >
               hello
-            </div>
+            </div> */}
           </div>
           <div className="absolute inset-0 translate-y-[85%] bg-pink-400 py-3 text-white">
             <AddShoppingCart
