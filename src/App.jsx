@@ -20,7 +20,7 @@ import ContactAdmin from "./components/Body/Help/contactAdmin";
 import ReviewPage from "./components/Body/Review/ReviewPage";
 import FavoritePage from "./components/Body/FavoritePage";
 import UserPage from "./components/User/UserPage";
-import MatchingPage from "./components/Body/Matching/matchingPage";
+
 import LogoutPage from "./components/Body/Login/LogoutPage";
 import { GoogleLogin } from "@react-oauth/google";
 import { jwtDecode } from "jwt-decode";
@@ -29,6 +29,7 @@ import { useState } from "react";
 import VerifyEmail from "./components/Body/Login/VerifyEmail";
 import ForgetPassword from "./components/Body/Login/ForgetPassword";
 import { ToastContainer } from "react-toastify";
+import MatchPage from "./components/Body/Matching/matchPage";
 
 googleLogout();
 
@@ -54,7 +55,7 @@ function App() {
       <ToastContainer />
 
       <Routes>
-        <Route path="/matching" element={<MatchingPage />}></Route>
+        <Route path="/matching" element={<MatchPage/>}></Route>
         <Route path="/favorite-collections" element={<FavoritePage />}></Route>
         <Route path="/testing" element={<Testing />}></Route>
         <Route path="/account" element={<UserPage />}></Route>

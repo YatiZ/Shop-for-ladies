@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import { MatchBottomData, MatchTopData } from './Match-Data'
+import { motion } from 'framer-motion';
 
 const MatchingPage = () => {
   const [topImgSrc, setTopImgSrc] = useState('');
@@ -19,7 +20,7 @@ const MatchingPage = () => {
       <div className='overflow-y-scroll h-64 mt-8'>
          {MatchTopData.map((d,index)=>(
             <div className='px-20' key={index}>
-                <img className='w-full object-contain' src={d.img} alt="" onClick={()=>changeDress('top-image',d.img)}/>
+                <motion.img drag className='w-full object-contain' src={d.img} alt="" onClick={()=>changeDress('top-image',d.img)}/>
             </div>
          ))}
       </div>
